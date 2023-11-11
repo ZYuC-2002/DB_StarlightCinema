@@ -1,0 +1,43 @@
+/*框框*/
+.register {
+    max-width: 300px;
+    margin: 10% auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /*輸入的部分(含選擇身分)*/
+  .register input[type="email"],
+  .register input[type="password"] {
+    width: 100%;
+    height: 30px;  /*輸入框的高度*/
+    margin-bottom: 10px;  /*每個東西的間距*/
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .register select {
+    width: 100%;
+    height: 30px;  /*輸入框的高度*/
+    margin-bottom: 10px;  /*每個東西的間距*/
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /*送出按鈕*/
+  .register button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /*送出按鈕(鼠標放上去)*/
+  .register button[type="submit"]:hover {
+    background-color: #45a049;
+  }
