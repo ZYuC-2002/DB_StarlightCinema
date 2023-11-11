@@ -1,15 +1,29 @@
 import React, {useState, useRef} from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
-// import socketIOClient from 'socket.io-client';
 import "./register.css";
 
 const Register = () => {
+    const [text, setName] = useState('');
+    const [date, setBirthdate] = useState('');
+    const [tel, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
     const navigate = useNavigate();
+
+    const handleNameChange = (event) => {
+        setName(event.target.value);
+    };
+
+    const handleBirthdateChange = (event) => {
+        setBirthdate(event.target.value);
+    };
+
+    const handlePhoneChange = (event) => {
+        setPhone(event.target.value);
+    };
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -54,34 +68,64 @@ const Register = () => {
     return(
         <div className="register">
             <form onSubmit={handleSubmit}>
-                <input 
-                    type="email"
-                    placeholder="請輸入電子信箱帳號"
-                    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-                    required value={email}
-                    onChange={handleEmailChange}
-                    ref={emailRef}/>
-                <input
-                    type="password"
-                    placeholder="請輸入密碼"
-                    pattern="^[a-zA-Z0-9._%+-]{6,20}$"
-                    required value={password}
-                    onChange={handlePasswordChange}/>
-                <input
-                    type="password"
-                    placeholder="請再次輸入密碼"
-                    pattern="^[a-zA-Z0-9._%+-]{6,20}$"
-                    required value={confirmPassword}
-                    onChange={handleConfirmPasswordChange}/>
-                <select required>
-                    <option>請選擇符合您的身分的票種</option>
-                    <option>全票</option>
-                    <option>學生票</option>
-                    <option>軍警票</option>
-                    <option>孩童票</option>
-                    <option>愛心票</option>
-                    <option>敬老票</option>
-                </select>
+                <div className="inputName">
+                    <div className="nameLabel">姓名:</div>
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        required value={text}
+                        onChange={handleNameChange}
+                    />
+                </div>
+                <div className="inputBirthdate">
+                    <div className="birthdateLabel">生日:</div>
+                    <input
+                        type="date"
+                        required value={date}
+                        onChange={handleBirthdateChange}
+                    />
+                </div>
+                <div className="inputPhone">
+                    <div className="phoneLabel">手機號碼:</div>
+                    <input
+                        type="tel"
+                        placeholder="Phone"
+                        required value={tel}
+                        onChange={handlePhoneChange}
+                    />
+                </div>
+                <div className="inputEmail">
+                    <div className="emailLabel">電子信箱:</div>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                        required value={email}
+                        onChange={handleEmailChange}
+                        ref={emailRef}
+                    />
+                </div>
+                <div className="inputPassword">
+                    <div className="passwordLabel">密碼:</div>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        pattern="^[a-zA-Z0-9._%+-]{6,20}$"
+                        required value={password}
+                        onChange={handlePasswordChange}
+                    />
+                </div>
+                <div className="inputConfirmPassword">
+                    <div className="confirmPasswordLabel">確認密碼:</div>
+                    <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        pattern="^[a-zA-Z0-9._%+-]{6,20}$"
+                        required value={confirmPassword}
+                        onChange={handleConfirmPasswordChange}
+                    />
+                </div>
+
                 <button type="submit">註冊</button>
             </form>
             
