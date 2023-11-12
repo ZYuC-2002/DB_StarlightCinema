@@ -1,7 +1,9 @@
 import React, {useState, useRef} from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
-import "./register.css";
+import "./registerCSS.css";
+import Navbar from "./upperlistuser";
+import Cookies from "universal-cookie";
 
 const Register = () => {
     const [text, setName] = useState('');
@@ -46,6 +48,7 @@ const Register = () => {
     };
 
     const emailRef = useRef(null);
+    const nameRef = useRef(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -54,7 +57,7 @@ const Register = () => {
         /* submit */
         if (isSubmitEnabled) {
             /* send email */
-            emailjs.send("service_aq2wl0k","template_g4hcvlv",{ email: emailRef.current.value }, "dHTKHVHTtwI7cqz5g")
+            emailjs.send("service_aq2wl0k","template_g4hcvlv",{ email: emailRef.current.value, name: nameRef.current.value }, "dHTKHVHTtwI7cqz5g")
                 .then(function(result) {
                     console.log('SUCCESS!', result.status, result.text);
                     navigate('/emailcheck'); // 密码一致时跳转到指定页面
@@ -65,71 +68,82 @@ const Register = () => {
         }
     };
 
-    return(
-        <div className="register">
-            <form onSubmit={handleSubmit}>
-                <div className="inputName">
-                    <div className="nameLabel">姓名:</div>
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        required value={text}
-                        onChange={handleNameChange}
-                    />
-                </div>
-                <div className="inputBirthdate">
-                    <div className="birthdateLabel">生日:</div>
-                    <input
-                        type="date"
-                        required value={date}
-                        onChange={handleBirthdateChange}
-                    />
-                </div>
-                <div className="inputPhone">
-                    <div className="phoneLabel">手機號碼:</div>
-                    <input
-                        type="tel"
-                        placeholder="Phone"
-                        required value={tel}
-                        onChange={handlePhoneChange}
-                    />
-                </div>
-                <div className="inputEmail">
-                    <div className="emailLabel">電子信箱:</div>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-                        required value={email}
-                        onChange={handleEmailChange}
-                        ref={emailRef}
-                    />
-                </div>
-                <div className="inputPassword">
-                    <div className="passwordLabel">密碼:</div>
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        pattern="^[a-zA-Z0-9._%+-]{6,20}$"
-                        required value={password}
-                        onChange={handlePasswordChange}
-                    />
-                </div>
-                <div className="inputConfirmPassword">
-                    <div className="confirmPasswordLabel">確認密碼:</div>
-                    <input
-                        type="password"
-                        placeholder="Confirm Password"
-                        pattern="^[a-zA-Z0-9._%+-]{6,20}$"
-                        required value={confirmPassword}
-                        onChange={handleConfirmPasswordChange}
-                    />
-                </div>
+    const [search, setSearch] = useState('');
+    const cookies=new Cookies();
 
-                <button type="submit">註冊</button>
-            </form>
-            
-        </div>
+    useEffect(() => {
+        cookies.set('search',search,{path:'/'});
+        console.log(cookies)
+    },[search])
+
+    return(
+        <>
+            <Navbar setSearch={setSearch}/>
+            <div className="register">
+                <form onSubmit={handleSubmit}>
+                    <div className="inputName">
+                        <div className="nameLabel">姓名:</div>
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            required value={text}
+                            onChange={handleNameChange}
+                            ref={nameRef}
+                        />
+                    </div>
+                    <div className="inputBirthdate">
+                        <div className="birthdateLabel">生日:</div>
+                        <input
+                            type="date"
+                            required value={date}
+                            onChange={handleBirthdateChange}
+                        />
+                    </div>
+                    <div className="inputPhone">
+                        <div className="phoneLabel">手機號碼:</div>
+                        <input
+                            type="tel"
+                            placeholder="Phone"
+                            required value={tel}
+                            onChange={handlePhoneChange}
+                        />
+                    </div>
+                    <div className="inputEmail">
+                        <div className="emailLabel">電子信箱:</div>
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                            required value={email}
+                            onChange={handleEmailChange}
+                            ref={emailRef}
+                        />
+                    </div>
+                    <div className="inputPassword">
+                        <div className="passwordLabel">密碼:</div>
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            pattern="^[a-zA-Z0-9._%+-]{6,20}$"
+                            required value={password}
+                            onChange={handlePasswordChange}
+                        />
+                    </div>
+                    <div className="inputConfirmPassword">
+                        <div className="confirmPasswordLabel">確認密碼:</div>
+                        <input
+                            type="password"
+                            placeholder="Confirm Password"
+                            pattern="^[a-zA-Z0-9._%+-]{6,20}$"
+                            required value={confirmPassword}
+                            onChange={handleConfirmPasswordChange}
+                        />
+                    </div>
+
+                    <button type="submit">註冊</button>
+                </form>
+            </div>
+        </>
     );
     
 };

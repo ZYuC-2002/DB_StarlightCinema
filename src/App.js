@@ -1,27 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import logo from './logo.svg';
-import './App.css';
+import Cookies from 'universal-cookie';
+import './AppCSS.css';
 import EmailCheck from './emailcheck';
 import Register from './register';
 import Login from './login';
+import SimpleSlider from './postslide';
+import Navbar from './upperlistuser';
 
 function App() {
   return (
     <>
-      <div className="Navigation">
-        {/* 標頭 */}
-        <nav className="menu">
-          <ul className="subMenu">
-            <li className="mainLink"><a href="https://www.vscinemas.com.tw/vsweb/#" className="firstMenu">影城介紹</a>
-              <ul className="sublink">
-                <li><a href="https://www.vscinemas.com.tw/vsweb/theater/index.aspx">威秀影城</a></li>
-                <li><a href="https://www.vscinemas.com.tw/vsweb/theater/detail2.aspx?id=23">MOVIE</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      const [search, setSearch] = useState('');
+      const cookies=new Cookies();
+
+      useEffect(() => {
+          cookies.set('search',search,{path:'/'});
+          console.log(cookies)
+      },[search])
 
       <Routes>
         <Route path='/' element={<Register />}></Route>
