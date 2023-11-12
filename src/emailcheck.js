@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./emailcheckCSS.css";
+import "./emailcheck.css";
 
 export const EmailCheck = () => { 
     const navigate = useNavigate();
 
     const goBack = () => {
-        navigate('/login');
+        navigate('/Login');
     };
 
     return(

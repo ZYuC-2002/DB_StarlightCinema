@@ -1,7 +1,7 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
-import "./registerCSS.css";
+import "./register.css";
 import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";
 
@@ -67,7 +67,6 @@ const Register = () => {
                 });
         }
     };
-
     const [search, setSearch] = useState('');
     const cookies=new Cookies();
 
@@ -142,6 +141,7 @@ const Register = () => {
 
                     <button type="submit">註冊</button>
                 </form>
+                
             </div>
         </>
     );
