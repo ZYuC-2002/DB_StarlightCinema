@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import './main.css'
+import './mainCSS.css'
 import SimpleSlider from './postslide';
 import Navbar from './upperlistuser';
 
@@ -17,7 +17,6 @@ function Main(){
     return(
         <>
             <Navbar setSearch={setSearch}/>
-            <div className='blank'/>
             <div className='postslider'>
                 <SimpleSlider/>
             </div>

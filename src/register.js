@@ -1,7 +1,7 @@
 import React, {useState, useRef,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
-import "./register.css";
+import "./registerCSS.css";
 import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";
 

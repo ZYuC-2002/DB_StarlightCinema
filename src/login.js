@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import './App.css';
-import './login.css'
+import './loginCSS.css'
 import Navbar from './upperlistuser';
 import Cookies from 'universal-cookie';
 import { Link } from 'react-router-dom';
@@ -39,7 +38,6 @@ function Login() {
         <h2 className='app-title'>Starlight Cinema Login Page</h2>
         <div className="card">
             <form onSubmit={handleLogin}>
-            {/* <label>Email:</label> */}
             <input
                 type="email"
                 value={email}
@@ -47,7 +45,7 @@ function Login() {
                 placeholder="請輸入電子信箱"
             />
             <br />
-            {/* <label>Password:</label> */}
+
             <input
                 type="password"
                 value={password}

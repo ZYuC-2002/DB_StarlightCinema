@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './main.css'
+import './mainCSS.css'
 
 const Navbar = ({ setSearch }) => {
   return (
@@ -18,7 +18,7 @@ const Navbar = ({ setSearch }) => {
         }}
       />
       <button className='button-search'>
-        <div className='logo-search' />
+        {/* <div className='logo-search' /> */}
       </button>
       <div className='blankpart' />
       <Link to={'/'}>
