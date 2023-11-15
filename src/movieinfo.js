@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom";
-import Navbar from "./upperlistuser";
 
-const MovieInfo = () => {
+export function App() {
     const [movieDetails, setMovieDetails] = useState({
         '01': {
             level: "普遍級",
@@ -59,19 +57,24 @@ const MovieInfo = () => {
     });
 
     const handleChange = (event) => {
+        console.log('hi\n');
+
         // 獲取<select>標籤中的值
         const movieId = event.target.value;
 
+        // 根據 movieId 從 movieDetails 中取得相應的電影資訊
+        const selectedMovieDetails = movieDetails[movieId];
+
         // 將<select>標籤中的值設定為 `movieDetails` 狀態變數的值
-        setMovieDetails(movieId);
+        setMovieDetails(selectedMovieDetails);
     };
 
-    useEffect(() => {
-        const movieData = movieDetails;
+    // useEffect(() => {
+    //     const movieData = movieDetails;
 
-        // 將電影資訊設定為 movieDetails 狀態變數的值
-        setMovieDetails(movieData);
-    }, [movieDetails]);
+    //     // 將電影資訊設定為 movieDetails 狀態變數的值
+    //     setMovieDetails(movieData);
+    // }, [movieDetails]);
 
     return(
         <>
@@ -116,5 +119,3 @@ const MovieInfo = () => {
         </>
     );
 };
-
-export default MovieInfo;
