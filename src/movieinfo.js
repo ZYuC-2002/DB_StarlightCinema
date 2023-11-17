@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-export function App() {
+const MovieInfo = () => {
     const [movieDetails, setMovieDetails] = useState({
         '01': {
             level: "普遍級",
@@ -56,37 +56,66 @@ export function App() {
         }
     });
 
+    const [selectedMovieId, setSelectedMovieId] = useState();
+
+    // const handleChange = (event) => {
+    //     // console.log('hi\n');
+        
+    //     // 獲取<select>標籤中的值
+    //     const newMovieId = event.target.value;
+    //     // 將<select>標籤中的值設定為 `selectedMovieId` 狀態變數的值
+    //     setSelectedMovieId(newMovieId);
+    //     console.log('newMovieId: ' + newMovieId);
+    //     console.log(selectedMovieId);
+    //     // 根據 newMovieId 從 movieDetails 中取得相應的電影資訊
+    //     const selectedMovieDetails = movieDetails[newMovieId];
+    //     // 如果找不到電影資訊就不更新
+    //     if (selectedMovieDetails) {
+    //         // 將<select>標籤中的值設定為 `movieDetails` 狀態變數的值
+    //         setMovieDetails(selectedMovieDetails);
+    //     } else {
+    //         console.error(`No details found for movieId: ${newMovieId}`);
+    //     }
+    // };
+
     const handleChange = (event) => {
-        console.log('hi\n');
-
-        // 獲取<select>標籤中的值
-        const movieId = event.target.value;
-
-        // 根據 movieId 從 movieDetails 中取得相應的電影資訊
-        const selectedMovieDetails = movieDetails[movieId];
-
-        // 將<select>標籤中的值設定為 `movieDetails` 狀態變數的值
-        setMovieDetails(selectedMovieDetails);
+        const newMovieId = event.target.value;
+        setSelectedMovieId(newMovieId);
     };
+    
+    useEffect(() => {
+        console.log('newMovieId:', selectedMovieId);  // 有
 
-    // useEffect(() => {
-    //     const movieData = movieDetails;
-
-    //     // 將電影資訊設定為 movieDetails 狀態變數的值
-    //     setMovieDetails(movieData);
-    // }, [movieDetails]);
+        // 在 useEffect 中使用回呼函數確保在 movieDetails 更新後執行
+        const selectedMovieDetails = movieDetails[selectedMovieId];
+        console.log('selectedMovieDetails: ', selectedMovieDetails);  // 問題(init也是)!!!!!!!!!!!
+        if (selectedMovieDetails) {
+            setMovieDetails(selectedMovieDetails);
+        } else {
+            console.error(`No details found for movieId: ${selectedMovieId}`);
+        }
+    }, [selectedMovieId, movieDetails]);
+    
+      // 初始時手動觸發 handleChange
+    useEffect(() => {
+        // handleChange({ target: { value: '01' } });
+        setSelectedMovieId('01');
+    }, []); // 空的依賴陣列表示這個 effect 只會在組件 mount 時執行一次
 
     return(
         <>
             <div className='selectMovie'>
                 {/* 未: 如果在前一頁是點"蒼鷺與少年"，它就selected */}
-                <select value={movieDetails} onChange={handleChange}>
-                    <option value='01'>蒼鷺與少年</option>
-                    <option value='02'>明天星期一</option>
-                    <option value='03'>捍衛戰士：獨行俠</option>
+                <select value={selectedMovieId} onChange={handleChange}>
+                    <option value="01">蒼鷺與少年</option>
+                    <option value="02">明天星期一</option>
+                    <option value="03">捍衛戰士：獨行俠</option>
                 </select>
             </div>
             <section className="movieInfo">
+                <div className="poster">
+                    <img src={process.env.PUBLIC_URL + "/kimitachiwadouikiruka_vertical.jpg"} alt="" height={500} />
+                </div>
                 <div className="titleArea">
                     <h1>{movieDetails.movieChiName}</h1>
                     <h2>{movieDetails.movieEngName}</h2>
@@ -119,3 +148,5 @@ export function App() {
         </>
     );
 };
+
+export default MovieInfo;
