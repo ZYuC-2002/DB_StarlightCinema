@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 
 const MovieInfo = () => {
-    const [movieDetails, setMovieDetails] = useState({
+    var movieDetails = {
         '01': {
+            img: '/kimitachiwadouikiruka_vertical.jpg',
             level: "普遍級",
             movieChiName: "蒼鷺與少年",
             movieEngName: "The Boy and the Heron",
@@ -19,6 +20,7 @@ const MovieInfo = () => {
             time: "2時4分"
         },
         '02': {
+            img: '/scale_vertical.jpg',
             level: "普遍級",
             movieChiName: "明天星期一",
             movieEngName: "Mondays: See You This Week!",
@@ -37,6 +39,7 @@ const MovieInfo = () => {
             time: "1時23分"
         },
         '03': {
+            img: '/topgun_vertical.jpg',
             level: "保護級",
             movieChiName: "捍衛戰士：獨行俠",
             movieEngName: "Top Gun: Maverick",
@@ -54,53 +57,26 @@ const MovieInfo = () => {
             type: "動作、劇情",
             time: "2時10分"
         }
-    });
+    }
 
-    const [selectedMovieId, setSelectedMovieId] = useState();
-
-    // const handleChange = (event) => {
-    //     // console.log('hi\n');
-        
-    //     // 獲取<select>標籤中的值
-    //     const newMovieId = event.target.value;
-    //     // 將<select>標籤中的值設定為 `selectedMovieId` 狀態變數的值
-    //     setSelectedMovieId(newMovieId);
-    //     console.log('newMovieId: ' + newMovieId);
-    //     console.log(selectedMovieId);
-    //     // 根據 newMovieId 從 movieDetails 中取得相應的電影資訊
-    //     const selectedMovieDetails = movieDetails[newMovieId];
-    //     // 如果找不到電影資訊就不更新
-    //     if (selectedMovieDetails) {
-    //         // 將<select>標籤中的值設定為 `movieDetails` 狀態變數的值
-    //         setMovieDetails(selectedMovieDetails);
-    //     } else {
-    //         console.error(`No details found for movieId: ${newMovieId}`);
-    //     }
-    // };
+    const [selectedMovieId, setSelectedMovieId] = useState('01');
 
     const handleChange = (event) => {
         const newMovieId = event.target.value;
         setSelectedMovieId(newMovieId);
     };
+
+    const [selectedMovieDetails, setSelectedMovieDetails] = useState(movieDetails['01']);
     
     useEffect(() => {
-        console.log('newMovieId:', selectedMovieId);  // 有
-
         // 在 useEffect 中使用回呼函數確保在 movieDetails 更新後執行
-        const selectedMovieDetails = movieDetails[selectedMovieId];
-        console.log('selectedMovieDetails: ', selectedMovieDetails);  // 問題(init也是)!!!!!!!!!!!
-        if (selectedMovieDetails) {
-            setMovieDetails(selectedMovieDetails);
-        } else {
+        setSelectedMovieDetails(movieDetails[selectedMovieId]);
+
+        // debug
+        if (!selectedMovieDetails) {
             console.error(`No details found for movieId: ${selectedMovieId}`);
         }
-    }, [selectedMovieId, movieDetails]);
-    
-      // 初始時手動觸發 handleChange
-    useEffect(() => {
-        // handleChange({ target: { value: '01' } });
-        setSelectedMovieId('01');
-    }, []); // 空的依賴陣列表示這個 effect 只會在組件 mount 時執行一次
+    }, [selectedMovieId]);
 
     return(
         <>
@@ -114,12 +90,12 @@ const MovieInfo = () => {
             </div>
             <section className="movieInfo">
                 <div className="poster">
-                    <img src={process.env.PUBLIC_URL + "/kimitachiwadouikiruka_vertical.jpg"} alt="" height={500} />
+                    <img src={process.env.PUBLIC_URL + selectedMovieDetails.img} alt="" height={500} />
                 </div>
                 <div className="titleArea">
-                    <h1>{movieDetails.movieChiName}</h1>
-                    <h2>{movieDetails.movieEngName}</h2>
-                    <time>上映日期：{movieDetails.date}</time>
+                    <h1>{selectedMovieDetails.movieChiName}</h1>
+                    <h2>{selectedMovieDetails.movieEngName}</h2>
+                    <time>上映日期：{selectedMovieDetails.date}</time>
                 </div>
                 <div className="infoArea">
                     <h3>MOVIE INFO</h3>
@@ -127,19 +103,19 @@ const MovieInfo = () => {
                         <tbody>
                             <tr>
                                 <td>導演：</td>
-                                <td><p>{movieDetails.director}</p></td>
+                                <td><p>{selectedMovieDetails.director}</p></td>
                             </tr>
                             <tr>
                                 <td>演員：</td>
-                                <td><p>{movieDetails.actors}</p></td>
+                                <td><p>{selectedMovieDetails.actors}</p></td>
                             </tr>
                             <tr>
                                 <td>類型：</td>
-                                <td><p>{movieDetails.type}</p></td>
+                                <td><p>{selectedMovieDetails.type}</p></td>
                             </tr>
                             <tr>
                                 <td>片長：</td>
-                                <td><p>{movieDetails.time}</p></td>
+                                <td><p>{selectedMovieDetails.time}</p></td>
                             </tr>
                         </tbody>
                     </table>
