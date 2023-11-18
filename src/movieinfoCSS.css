@@ -1,0 +1,135 @@
+.selectMovie {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.selectMovie select {
+    padding: 3px;
+    /* font-size: 14px; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.movieInfo {
+    display: flex;
+    margin-top: 10px;
+}
+
+.poster {
+    width: 30%;
+}
+.poster img {
+    max-width: 90%;
+    height: auto; /* 保持比例 */
+    margin-left: 10%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.infoArea {
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 30%;
+}
+
+h1, h2, time {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 31.2px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #555;
+}
+
+time {
+    font-size: 100%;
+    display: block;
+    margin-top: 10px;
+    color: #888;
+}
+
+/* h3 {
+    font-size: 1.2em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom   : 10px;
+} */
+
+h3 {
+    font-family: Arial;
+    font-size: 26px;
+    color: #ccc;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+/* table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+    font-weight: bold;
+} */
+
+table tr td {
+    min-width: 60px;
+    vertical-align: top;
+}
+
+p {
+    margin: 0;
+}
+
+.versionSelection {
+    margin-top: 20px;
+}
+  
+.versionSelection h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.versionList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.versionList li {
+    margin-bottom: 10px; /* 設定底邊距，使版本之間有間隔 */
+}
+
+.versionList a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    text-decoration: none; /* 去除底線 */
+    color: #333; /* 文字顏色 */
+}
+
+.versionList a:hover {
+    background-color: #f0f0f0;
+}
+
+.versionFirst {
+    font-weight: bold;
+}
+
+/* .versionSelection h4 select{
+    margin-top: 10px;
+    position: relative;
+    float: right;
+    width: 300px;
+    font-size: 16px
+} */

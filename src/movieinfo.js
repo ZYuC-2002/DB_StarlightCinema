@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import "./movieinfoCSS.css";
 
 const MovieInfo = () => {
     var movieDetails = {
@@ -61,9 +62,17 @@ const MovieInfo = () => {
 
     const [selectedMovieId, setSelectedMovieId] = useState('01');
 
+    const screeningVersions = {
+        '01': ['2D', '3D', 'IMAX'],  // 蒼鷺與少年的放映版本
+        '02': ['普通版', '豪華版'],    // 明天星期一的放映版本
+        '03': ['普通版', 'IMAX']       // 捍衛戰士：獨行俠的放映版本
+    };
+    const [selectedScreeningVersion, setSelectedScreeningVersion] = useState(screeningVersions[selectedMovieId][0]);
+
     const handleChange = (event) => {
         const newMovieId = event.target.value;
         setSelectedMovieId(newMovieId);
+        setSelectedScreeningVersion(screeningVersions[newMovieId][0]);  // 預設選擇每部電影的第一個放映版本
     };
 
     const [selectedMovieDetails, setSelectedMovieDetails] = useState(movieDetails['01']);
@@ -92,12 +101,11 @@ const MovieInfo = () => {
                 <div className="poster">
                     <img src={process.env.PUBLIC_URL + selectedMovieDetails.img} alt="" height={500} />
                 </div>
-                <div className="titleArea">
+                <div className="infoArea">
                     <h1>{selectedMovieDetails.movieChiName}</h1>
                     <h2>{selectedMovieDetails.movieEngName}</h2>
                     <time>上映日期：{selectedMovieDetails.date}</time>
-                </div>
-                <div className="infoArea">
+
                     <h3>MOVIE INFO</h3>
                     <table>
                         <tbody>
@@ -120,7 +128,36 @@ const MovieInfo = () => {
                         </tbody>
                     </table>
                 </div>
+
+                <div className="versionSelection">
+                    <h4>放映版本</h4>
+                    <ul className="versionList">
+                        {screeningVersions[selectedMovieId].map((version, index) => (
+                            <li key={index}>
+                                <a href="#" className={index === 0 ? 'versionFirst' : ''} onClick={() => setSelectedScreeningVersion(version)}>
+                                    {version}
+                                    {index === 0 && <span className="icon-chevron-right"></span>}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
             </section>
+            
+            {/* <div className="movieVersion">
+                <h4>放映版本</h4>
+                <ul className="versionList">
+                    <li>
+                        <a className="version">
+
+                        </a>
+                        <ul className="theater">
+
+                        </ul>
+                    </li>
+                </ul>
+            </div> */}
         </>
     );
 };
