@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./movieinfoCSS.css";
+import { Link } from "react-router-dom";
 
 const MovieInfo = () => {
     var movieDetails = {
@@ -10,11 +11,15 @@ const MovieInfo = () => {
             movieEngName: "The Boy and the Heron",
             date: "2023/10/06",
             // eslint-disable-next-line no-multi-str
-            info: "★動畫大師宮崎駿睽違10年全新力作！\n\
-            ★破天荒「零宣傳」策略轟動全球，橫掃日本票房80億！\n\
-            ★上映首四日票房打破《神隱少女》紀錄，累積超過400萬觀影人次！\n\n\
-            動畫大師宮﨑駿繼《風起》後，睽違10年再次製作動畫長片。\n\n\
-            -甲上",
+            info: (
+                <>
+                    <p>★動畫大師宮崎駿睽違10年全新力作！</p>
+                    <p>★破天荒「零宣傳」策略轟動全球，橫掃日本票房80億！</p>
+                    <p>★上映首四日票房打破《神隱少女》紀錄，累積超過400萬觀影人次！</p>
+                    <p>動畫大師宮﨑駿繼《風起》後，睽違10年再次製作動畫長片。</p>
+                    <p>-甲上</p>
+                </>
+            ),
             director: "宮﨑駿",
             actors: "-",
             type: "劇情",
@@ -27,13 +32,17 @@ const MovieInfo = () => {
             movieEngName: "Mondays: See You This Week!",
             date: "2023/10/20",
             // eslint-disable-next-line no-multi-str
-            info: "吉川和他的同事們在一家小型的廣告公司做牛做馬，\
-            過著日復一日的社畜生活。某個星期一早晨，\
-            她的兩個同事驚恐地告訴她：「我們這一週『重複』過著同樣的生活！」\
-            不知為什麼，全體職員被困在辦公室過著永無止盡的「職場輪迴」，\
-            為了打破時間迴圈，他們必須使出渾身解數讓關鍵人物部長意識到這個事實。\
-            地獄般的一週卻又笑料百出，這不就是你我的打工日常嗎？本片對職場及打工人生的真實刻畫，\
-            各種熟悉又似曾相識的橋段讓人心有戚戚焉。",
+            info: (
+                <>
+                    <p>吉川和他的同事們在一家小型的廣告公司做牛做馬，</p>
+                    <p>過著日復一日的社畜生活。某個星期一早晨，</p>
+                    <p>她的兩個同事驚恐地告訴她：「我們這一週『重複』過著同樣的生活！」</p>
+                    <p>不知為什麼，全體職員被困在辦公室過著永無止盡的「職場輪迴」，</p>
+                    <p>為了打破時間迴圈，他們必須使出渾身解數讓關鍵人物部長意識到這個事實。</p>
+                    <p>地獄般的一週卻又笑料百出，這不就是你我的打工日常嗎？本片對職場及打工人生的真實刻畫，</p>
+                    <p>各種熟悉又似曾相識的橋段讓人心有戚戚焉。</p>
+                </>
+            ),
             director: "竹林亮",
             actors: "圓井灣 、 槙田雄司",
             type: "劇情",
@@ -46,13 +55,17 @@ const MovieInfo = () => {
             movieEngName: "Top Gun: Maverick",
             date: "2022/12/07",
             // eslint-disable-next-line no-multi-str
-            info: "故事敘述服役超過30年，身為海軍頂尖飛行員的「獨行俠」彼得米契爾上校 (湯姆克魯斯 飾) \
-            仍舊堅守他的崗位，以試飛員的身份不斷突破飛行極限，\
-            也放棄任何足以終止飛行生涯的晉升。\
-            他在訓練一組 TOP GUN 菁英小組去執行一個前所未聞的特殊任務時，\
-            遇見了已故搭檔「呆頭鵝」尼克布雷德蕭中尉的兒子-「公雞」布雷德利布雷德蕭中尉 (麥爾斯泰勒 飾) 。\
-            在面對不確定的未來和來自過去夢靨的影響下，「獨行俠」在這個要求飛行員奉獻出最終代價的行動裡，\
-            被迫面對自己最深層的心魔。",
+            info: (
+                <>
+                    <p>故事敘述服役超過30年，身為海軍頂尖飛行員的「獨行俠」彼得米契爾上校 (湯姆克魯斯 飾)</p>
+                    <p>仍舊堅守他的崗位，以試飛員的身份不斷突破飛行極限，</p>
+                    <p>也放棄任何足以終止飛行生涯的晉升。</p>
+                    <p>他在訓練一組 TOP GUN 菁英小組去執行一個前所未聞的特殊任務時，</p>
+                    <p>遇見了已故搭檔「呆頭鵝」尼克布雷德蕭中尉的兒子-「公雞」布雷德利布雷德蕭中尉 (麥爾斯泰勒 飾)。</p>
+                    <p>在面對不確定的未來和來自過去夢靨的影響下，「獨行俠」在這個要求飛行員奉獻出最終代價的行動裡，</p>
+                    <p>被迫面對自己最深層的心魔。</p>
+                </>
+            ),
             director: "喬瑟夫柯辛斯基",
             actors: "湯姆克魯斯、喬漢姆、珍妮佛康納莉、方基墨、麥爾斯泰勒、艾德哈里斯、格蘭鮑威爾",
             type: "動作、劇情",
@@ -126,10 +139,13 @@ const MovieInfo = () => {
                     <option value="03">捍衛戰士：獨行俠</option>
                 </select>
             </div>
+
             <section className="movieInfo">
+
                 <div className="poster">
                     <img src={process.env.PUBLIC_URL + selectedMovieDetails.img} alt="" height={500} />
                 </div>
+
                 <div className="infoArea">
                     <h1>{selectedMovieDetails.movieChiName}</h1>
                     <h2>{selectedMovieDetails.movieEngName}</h2>
@@ -163,19 +179,38 @@ const MovieInfo = () => {
                     <ul className="versionList">
                         {screeningVersions[selectedMovieId].versions.map((version, index) => (
                             <li key={index} className={selectedVersion === version ? 'active' : ''}>
-                                <a href="#" onClick={(e) => handleVersionClick(e, version)}>
+                                <a onClick={(e) => handleVersionClick(e, version)}>
                                     {version}
                                 </a>
                                 {selectedVersion === version && (
                                     <ul className="theaterList">
                                         {screeningVersions[selectedMovieId].theaters[version].map((theater, theaterIndex) => (
-                                            <li key={theaterIndex}><a href="#">{theater}</a></li>
+                                            <Link to={'/TimeList'}>
+                                                <li key={theaterIndex}>{theater}</li>
+                                            </Link>
                                         ))}
                                     </ul>
                                 )}
                             </li>
                         ))}
                     </ul>
+                </div>
+
+            </section>
+
+            <section className="movieIntro">
+                <div className="videoContainer">
+                    <iframe
+                        src="https://www.youtube.com/embed/evZLK0h_Fqo?si=A9xjQoUHdz0LHF7R"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    >
+                    </iframe>
+                </div>
+                <div className="drama">
+                    <h4>劇情簡介</h4>
+                    <p>{selectedMovieDetails.info}</p>
                 </div>
             </section>
         </>

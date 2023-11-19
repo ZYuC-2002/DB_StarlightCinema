@@ -6,6 +6,7 @@ import Employeemain from "./employee.js";
 import Login from "./login.js";
 import EmailCheck from "./emailcheck.js";
 import MovieInfo from "./movieinfo.js";
+import TimeList from "./timelist.js";
 
 const AppRouter = () => (
     <Router>
@@ -17,6 +18,7 @@ const AppRouter = () => (
         <Route path="/Login/" element={<Login/>} />
         <Route path="/Emailcheck/" element={<EmailCheck/>} />
         <Route path="/Movieinfo/" element={<MovieInfo/>} />
+        <Route path="/Timelist/" element={<TimeList/>} />
       </Routes>  
       
     </Router>
