@@ -124,12 +124,6 @@ p {
     position: relative; /* 使用相對定位 */
 }
 
-.versionList a:hover,
-.theaterList a:hover {
-    background-color: #f0f0f0;
-    position: relative; /* 使用相對定位 */
-}
-
 .versionFirst {
     font-weight: bold;
 }
@@ -142,6 +136,6 @@ p {
     margin-left: 10px;
 }
 
-.versionList li:hover .theaterList {
+.versionList .theaterList {
     display: inline-block;
 }

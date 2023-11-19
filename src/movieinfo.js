@@ -88,17 +88,11 @@ const MovieInfo = () => {
         },
     };
 
-    const initialVersion = screeningVersions[selectedMovieId].versions[0];
-    const [selectedScreeningVersion, setSelectedScreeningVersion] = useState(screeningVersions[selectedMovieId].versions[0]);
-    const [hoveredVersion, setHoveredVersion] = useState(screeningVersions[selectedMovieId].versions[0]);
-    // const [hoveredVersion, setHoveredVersion] = useState(null);
-
     /* 未解決區(init)end */
 
     const handleChange = (event) => {
         const newMovieId = event.target.value;
         setSelectedMovieId(newMovieId);
-        setSelectedScreeningVersion(screeningVersions[newMovieId][0]);  // 預設選擇每部電影的第一個放映版本
     };
 
     const [selectedMovieDetails, setSelectedMovieDetails] = useState(movieDetails['01']);
@@ -114,12 +108,11 @@ const MovieInfo = () => {
     }, [selectedMovieId]);
 
     /* 未解決區start */
-    const [activeVersion, setActiveVersion] = useState(screeningVersions[selectedMovieId][0]);
+    const [selectedVersion, setSelectedVersion] = useState(null);
 
-    const handleVersionHover = (version) => {
-        console.log('handleVersionHover')
-        setActiveVersion(version);
-        setHoveredVersion(version);
+    const handleVersionClick = (event, version) => {
+        event.preventDefault();
+        setSelectedVersion(version);
     };
     /* 未解決區end */
 
@@ -165,19 +158,15 @@ const MovieInfo = () => {
                     </table>
                 </div>
                 
-                {/* 懸停才顯示theater */}
                 <div className="versionSelection">
-                    <h4>放映版本</h4>    
-                    <ul
-                        className="versionList"
-                        onMouseEnter={() => handleVersionHover(activeVersion)}
-                    >
+                    <h4>放映版本</h4>
+                    <ul className="versionList">
                         {screeningVersions[selectedMovieId].versions.map((version, index) => (
-                            <li key={index} className={activeVersion === version ? 'active' : ''}>
-                                <a href="#" onMouseEnter={() => handleVersionHover(version)}>
+                            <li key={index} className={selectedVersion === version ? 'active' : ''}>
+                                <a href="#" onClick={(e) => handleVersionClick(e, version)}>
                                     {version}
                                 </a>
-                                {hoveredVersion === version && (
+                                {selectedVersion === version && (
                                     <ul className="theaterList">
                                         {screeningVersions[selectedMovieId].theaters[version].map((theater, theaterIndex) => (
                                             <li key={theaterIndex}><a href="#">{theater}</a></li>
@@ -188,7 +177,6 @@ const MovieInfo = () => {
                         ))}
                     </ul>
                 </div>
-
             </section>
         </>
     );
