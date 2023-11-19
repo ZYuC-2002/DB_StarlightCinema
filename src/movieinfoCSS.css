@@ -96,17 +96,22 @@ p {
     margin-bottom: 10px;
 }
 
-.versionList {
+.versionList,
+.theaterList {
     list-style: none;
     padding: 0;
     margin: 0;
+    position: relative; /* 使用相對定位 */
 }
 
-.versionList li {
-    margin-bottom: 10px; /* 設定底邊距，使版本之間有間隔 */
+.versionList li,
+.theaterList li {
+    margin-bottom: 10px;
+    position: relative; /* 使用相對定位 */
 }
 
-.versionList a {
+.versionList a,
+.theaterList a {
     display: block;
     padding: 10px;
     font-size: 16px;
@@ -114,22 +119,29 @@ p {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
-    text-decoration: none; /* 去除底線 */
-    color: #333; /* 文字顏色 */
+    text-decoration: none;
+    color: #333;
+    position: relative; /* 使用相對定位 */
 }
 
-.versionList a:hover {
+.versionList a:hover,
+.theaterList a:hover {
     background-color: #f0f0f0;
+    position: relative; /* 使用相對定位 */
 }
 
 .versionFirst {
     font-weight: bold;
 }
 
-/* .versionSelection h4 select{
-    margin-top: 10px;
-    position: relative;
-    float: right;
-    width: 300px;
-    font-size: 16px
-} */
+.theaterList {
+    position: absolute;
+    top: 0; /* 調整位置 */
+    left: 100%; /* 調整位置 */
+    display: none;
+    margin-left: 10px;
+}
+
+.versionList li:hover .theaterList {
+    display: inline-block;
+}

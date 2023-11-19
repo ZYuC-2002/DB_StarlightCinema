@@ -62,12 +62,38 @@ const MovieInfo = () => {
 
     const [selectedMovieId, setSelectedMovieId] = useState('01');
 
+    /* 未解決區(init)start */
     const screeningVersions = {
-        '01': ['2D', '3D', 'IMAX'],  // 蒼鷺與少年的放映版本
-        '02': ['普通版', '豪華版'],    // 明天星期一的放映版本
-        '03': ['普通版', 'IMAX']       // 捍衛戰士：獨行俠的放映版本
+        '01': {
+            versions: ['2D', '3D', 'IMAX'],
+            theaters: {
+              '2D': ['影城1', '影城2', '影城3'],
+              '3D': ['影城4', '影城5'],
+              'IMAX': ['影城6', '影城7', '影城8'],
+            },
+        },
+          '02': {
+            versions: ['普通版', '豪華版'],
+            theaters: {
+              '普通版': ['影城9', '影城10'],
+              '豪華版': ['影城11', '影城12', '影城13'],
+            },
+        },
+          '03': {
+            versions: ['普通版', 'IMAX'],
+            theaters: {
+              '普通版': ['影城14', '影城15'],
+              'IMAX': ['影城16', '影城17'],
+            },
+        },
     };
-    const [selectedScreeningVersion, setSelectedScreeningVersion] = useState(screeningVersions[selectedMovieId][0]);
+
+    const initialVersion = screeningVersions[selectedMovieId].versions[0];
+    const [selectedScreeningVersion, setSelectedScreeningVersion] = useState(screeningVersions[selectedMovieId].versions[0]);
+    const [hoveredVersion, setHoveredVersion] = useState(screeningVersions[selectedMovieId].versions[0]);
+    // const [hoveredVersion, setHoveredVersion] = useState(null);
+
+    /* 未解決區(init)end */
 
     const handleChange = (event) => {
         const newMovieId = event.target.value;
@@ -86,6 +112,16 @@ const MovieInfo = () => {
             console.error(`No details found for movieId: ${selectedMovieId}`);
         }
     }, [selectedMovieId]);
+
+    /* 未解決區start */
+    const [activeVersion, setActiveVersion] = useState(screeningVersions[selectedMovieId][0]);
+
+    const handleVersionHover = (version) => {
+        console.log('handleVersionHover')
+        setActiveVersion(version);
+        setHoveredVersion(version);
+    };
+    /* 未解決區end */
 
     return(
         <>
@@ -128,36 +164,32 @@ const MovieInfo = () => {
                         </tbody>
                     </table>
                 </div>
-
+                
+                {/* 懸停才顯示theater */}
                 <div className="versionSelection">
-                    <h4>放映版本</h4>
-                    <ul className="versionList">
-                        {screeningVersions[selectedMovieId].map((version, index) => (
-                            <li key={index}>
-                                <a href="#" className={index === 0 ? 'versionFirst' : ''} onClick={() => setSelectedScreeningVersion(version)}>
+                    <h4>放映版本</h4>    
+                    <ul
+                        className="versionList"
+                        onMouseEnter={() => handleVersionHover(activeVersion)}
+                    >
+                        {screeningVersions[selectedMovieId].versions.map((version, index) => (
+                            <li key={index} className={activeVersion === version ? 'active' : ''}>
+                                <a href="#" onMouseEnter={() => handleVersionHover(version)}>
                                     {version}
-                                    {index === 0 && <span className="icon-chevron-right"></span>}
                                 </a>
+                                {hoveredVersion === version && (
+                                    <ul className="theaterList">
+                                        {screeningVersions[selectedMovieId].theaters[version].map((theater, theaterIndex) => (
+                                            <li key={theaterIndex}><a href="#">{theater}</a></li>
+                                        ))}
+                                    </ul>
+                                )}
                             </li>
                         ))}
                     </ul>
                 </div>
 
             </section>
-            
-            {/* <div className="movieVersion">
-                <h4>放映版本</h4>
-                <ul className="versionList">
-                    <li>
-                        <a className="version">
-
-                        </a>
-                        <ul className="theater">
-
-                        </ul>
-                    </li>
-                </ul>
-            </div> */}
         </>
     );
 };
