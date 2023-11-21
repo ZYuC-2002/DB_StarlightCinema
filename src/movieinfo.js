@@ -10,7 +10,6 @@ const MovieInfo = () => {
             movieChiName: "蒼鷺與少年",
             movieEngName: "The Boy and the Heron",
             date: "2023/10/06",
-            // eslint-disable-next-line no-multi-str
             info: (
                 <>
                     <p>★動畫大師宮崎駿睽違10年全新力作！</p>
@@ -23,7 +22,8 @@ const MovieInfo = () => {
             director: "宮﨑駿",
             actors: "-",
             type: "劇情",
-            time: "2時4分"
+            time: "2時4分",
+            src: "https://www.youtube.com/embed/evZLK0h_Fqo?si=A9xjQoUHdz0LHF7R"
         },
         '02': {
             img: '/scale_vertical.jpg',
@@ -31,7 +31,6 @@ const MovieInfo = () => {
             movieChiName: "明天星期一",
             movieEngName: "Mondays: See You This Week!",
             date: "2023/10/20",
-            // eslint-disable-next-line no-multi-str
             info: (
                 <>
                     <p>吉川和他的同事們在一家小型的廣告公司做牛做馬，</p>
@@ -46,7 +45,8 @@ const MovieInfo = () => {
             director: "竹林亮",
             actors: "圓井灣 、 槙田雄司",
             type: "劇情",
-            time: "1時23分"
+            time: "1時23分",
+            src: "https://www.youtube.com/embed/PAALl5PeVYk?si=3lcsSgkw0uhvXYUU"
         },
         '03': {
             img: '/topgun_vertical.jpg',
@@ -54,7 +54,6 @@ const MovieInfo = () => {
             movieChiName: "捍衛戰士：獨行俠",
             movieEngName: "Top Gun: Maverick",
             date: "2022/12/07",
-            // eslint-disable-next-line no-multi-str
             info: (
                 <>
                     <p>故事敘述服役超過30年，身為海軍頂尖飛行員的「獨行俠」彼得米契爾上校 (湯姆克魯斯 飾)</p>
@@ -69,13 +68,13 @@ const MovieInfo = () => {
             director: "喬瑟夫柯辛斯基",
             actors: "湯姆克魯斯、喬漢姆、珍妮佛康納莉、方基墨、麥爾斯泰勒、艾德哈里斯、格蘭鮑威爾",
             type: "動作、劇情",
-            time: "2時10分"
+            time: "2時10分",
+            src: "https://www.youtube.com/embed/IbsLhjGg6mg?si=_glxs85TU86c_2xU"
         }
     }
 
     const [selectedMovieId, setSelectedMovieId] = useState('01');
 
-    /* 未解決區(init)start */
     const screeningVersions = {
         '01': {
             versions: ['2D', '3D', 'IMAX'],
@@ -101,8 +100,6 @@ const MovieInfo = () => {
         },
     };
 
-    /* 未解決區(init)end */
-
     const handleChange = (event) => {
         const newMovieId = event.target.value;
         setSelectedMovieId(newMovieId);
@@ -120,14 +117,12 @@ const MovieInfo = () => {
         }
     }, [selectedMovieId]);
 
-    /* 未解決區start */
     const [selectedVersion, setSelectedVersion] = useState(null);
 
     const handleVersionClick = (event, version) => {
         event.preventDefault();
         setSelectedVersion(version);
     };
-    /* 未解決區end */
 
     return(
         <>
@@ -178,7 +173,8 @@ const MovieInfo = () => {
                     <h4>放映版本</h4>
                     <ul className="versionList">
                         {screeningVersions[selectedMovieId].versions.map((version, index) => (
-                            <li key={index} className={selectedVersion === version ? 'active' : ''}>
+                            <li key={index} className={selectedVersion === version ? 'active' : ''} id="version">
+                                {/* a的問題 */}
                                 <a onClick={(e) => handleVersionClick(e, version)}>
                                     {version}
                                 </a>
@@ -186,7 +182,7 @@ const MovieInfo = () => {
                                     <ul className="theaterList">
                                         {screeningVersions[selectedMovieId].theaters[version].map((theater, theaterIndex) => (
                                             <Link to={'/TimeList'}>
-                                                <li key={theaterIndex}>{theater}</li>
+                                                <li key={theaterIndex} id="theater">{theater}</li>
                                             </Link>
                                         ))}
                                     </ul>
@@ -195,13 +191,12 @@ const MovieInfo = () => {
                         ))}
                     </ul>
                 </div>
-
             </section>
 
             <section className="movieIntro">
                 <div className="videoContainer">
                     <iframe
-                        src="https://www.youtube.com/embed/evZLK0h_Fqo?si=A9xjQoUHdz0LHF7R"
+                        src={selectedMovieDetails.src}
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
