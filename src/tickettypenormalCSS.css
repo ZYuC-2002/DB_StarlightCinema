@@ -1,0 +1,33 @@
+.title {
+    width: 80%;
+    margin: 5% auto;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+}
+
+table {
+    /* border-collapse: table合起來(collapse) or 分開(separate) */
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+  
+th, td {
+    border: 1px solid #C7B198;
+    padding: 8px;
+    text-align: left;
+}
+  
+th {
+    background-color: #C7B198;
+}
+
+select {
+    border: 3px solid #C7B198;
+    border-radius: 5px;
+}
