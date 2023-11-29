@@ -3,10 +3,6 @@ import "./tickettypenormalCSS.css";
 
 const TicketTypeNormal = () => {
     const calculateTotal = () => {
-        // Your logic to calculate totals here
-        // ...
-    
-        // Example:
         const fullQuantity = document.getElementById('fullQuantity').value;
         const discountQuantity = document.getElementById('discountQuantity').value;
     
