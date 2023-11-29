@@ -49,7 +49,10 @@ const TicketTypeNormal = () => {
                         <td id="fullTotal">0</td>
                     </tr>
                     <tr>
-                        <td>優待票</td>
+                        <td>
+                            <p>優待票</p>
+                            <p className="comment">優待票包括學生票、軍警票、孩童票；購買優待票者，需於進場驗票時出示相關優待證件，無證件者須補費至全票金額。</p>
+                        </td>
                         <td id="discountPrice">80</td>
                         <td>
                             <select id="discountQuantity" onChange={calculateTotal}>
