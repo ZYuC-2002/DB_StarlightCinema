@@ -1,0 +1,111 @@
+.movieinfo {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 1px;
+    margin-right: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+}
+  
+.textBlock {
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+}
+  
+/* temp: col-sm-6 */
+.temp {
+    width: 50%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+ 
+/* temp1: col-xs-4 */
+/* temp2: col-xs-8 */
+.temp1,
+.temp2 {
+    width: 33.3333%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+}
+  
+.btn,
+.btn-outline-primary {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 10px 16px;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    pointer-events: auto; /* 應該是默認值，可點擊 */
+    cursor: pointer; /* 應該是默認值，顯示為指針 */
+}
+  
+.divItemDescription_EN,
+.divTicketsTypeDescription_EN {
+    font-family: Calibri;
+    padding: 5px;
+    padding-left: 18px;
+    font-size: 12pt;
+    margin-top: -10px;
+    color: #aaaaaa;
+}
+
+.divTicketsTypeDescription_CN {
+    color: #555555;
+    padding: 3px;
+    padding-left: 15px;
+    font-size: 14pt;
+}
+
+.divItemDescription_CN {
+    color: #555555;
+    padding: 3px;
+    padding-left: 15px;
+    font-size: 16pt;
+}
+
+.ticket-counts-container {
+    display: flex;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+}
+
+.ticket-type {
+    display: block;
+    flex-direction: row;
+    align-items: center; /* 設置票種的內容靠左對齊 */
+}
+
+.ticket-count {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+}
+  
+.ticket-count.selected {
+    background-color: blue;
+    color: white;
+}
