@@ -9,6 +9,7 @@ import MovieInfo from "./movieinfo.js";
 import TimeList from "./timelist.js";
 import TicketTypeNormal from "./tickettypenormal.js";
 import TicketTypeSpecial from "./tickettypespecial.js";
+import CustomerService from "./customerservice.js";
 
 const AppRouter = () => (
     <Router>
@@ -23,6 +24,7 @@ const AppRouter = () => (
         <Route path="/Timelist/" element={<TimeList/>} />
         <Route path="/Tickettypenormal/" element={<TicketTypeNormal/>} />
         <Route path="/Tickettypespecial/" element={<TicketTypeSpecial/>} />
+        <Route path="/Customerservice/" element={<CustomerService/>} />
       </Routes>  
       
     </Router>
