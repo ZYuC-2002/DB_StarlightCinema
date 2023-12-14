@@ -9,7 +9,8 @@ import MovieList from "./movieList.js";
 import MovieInfo from "./movieinfo.js";
 import EmailCheck from "./emailcheck.js";
 import ForgotPassword from "./fogotPassword.js";
-//import MovieList from "./movieList.js";
+import PaymentChoose from "./paymentChoose.js";
+import PaymentPage from "./paymentPage.js";
 // import Vegetable from "./vegetable.js";
 
 const AppRouter = () => (
@@ -25,6 +26,8 @@ const AppRouter = () => (
         <Route path="/MovieInfo/" element={<MovieInfo/>} />
         <Route path="/Emailcheck/" element={<EmailCheck/>} />
         <Route path="/ForgotPassword" element={<ForgotPassword/>} />
+        <Route path="/PaymentChoose" element={<PaymentChoose/>} />
+        <Route path="/PaymentPage" element={<PaymentPage/>} />
       </Routes>  
       
     </Router>
