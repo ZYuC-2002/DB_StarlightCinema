@@ -5,7 +5,7 @@ import Register from "./register.js";
 import Employeemain from "./employee.js";
 import Login from "./login.js";
 import EmailCheck from "./emailcheck.js";
-import MovieInfo from "./movieinfo.js";
+import MovieDetail from "./moviedetail.js";
 import TimeList from "./timelist.js";
 import TicketTypeNormal from "./tickettypenormal.js";
 import TicketTypeSpecial from "./tickettypespecial.js";
@@ -20,7 +20,7 @@ const AppRouter = () => (
         <Route path="/Register/" element={<Register/>} />
         <Route path="/Login/" element={<Login/>} />
         <Route path="/Emailcheck/" element={<EmailCheck/>} />
-        <Route path="/Movieinfo/" element={<MovieInfo/>} />
+        <Route path="/Moviedetail/" element={<MovieDetail/>} />
         <Route path="/Timelist/" element={<TimeList/>} />
         <Route path="/Tickettypenormal/" element={<TicketTypeNormal/>} />
         <Route path="/Tickettypespecial/" element={<TicketTypeSpecial/>} />

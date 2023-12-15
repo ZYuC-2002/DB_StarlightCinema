@@ -1,9 +1,9 @@
 .checkEmail {
     max-width: 40vw;
     max-height:fit-content;
-    margin: 10% auto;
+    margin: 15vh auto;
     text-align: center;
-    padding: 20px;
+    padding: 10vh 10vw;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
