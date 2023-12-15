@@ -1,8 +1,13 @@
 .customerOpinion {
-    max-width: 300px;
-    margin: 10% auto;
+    width: 50vw;
+    height: 60vh;
+    /* min-width: ;
+    min-height: ; */
+    margin-top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    padding: 20px;
+    padding: 5vh;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -19,7 +24,7 @@
 .opinion {
     width: 100%;
     height: 30px;  /*輸入框的高度*/
-    margin-bottom: 10px;  /*每區的間距*/
+    margin-bottom: 3vh;  /*每區的間距*/
     display: flex;
 }
 
@@ -29,8 +34,8 @@
 .emailLabel,
 .cinemaLabel,
 .opinionLabel {
-    margin-right: 10px;  /* 調整標籤和輸入框之間的距離 */
     min-width: 100px; /* 最小寬度，可以根據實際需要調整 */
+    text-align: left;
 }
 
 input,
@@ -38,11 +43,18 @@ select {
     border: 1px solid #ccc;
     border-radius: 5px;
     height: 25px;
-    width: calc(100% - 110px); /* 寬度計算，總寬度減去標籤的寬度 */
+    width: calc(100% - 100px); /* 寬度計算，總寬度減去標籤的寬度 */
+}
+
+input[type="radio"] {
+    margin-left: 1%;
+    margin-right: 0;
+    width: 10%;  /* 调整单选框的宽度 */
+    height: 4vh;  /* 调整单选框的高度 */
 }
 
 /*送出按鈕*/
-.register button[type="submit"] {
+.customerOpinion button[type="submit"] {
     background-color: #C7B198;
     color: white;
     padding: 10px 20px;
@@ -53,6 +65,6 @@ select {
 }
   
 /*送出按鈕(鼠標放上去)*/
-    .register button[type="submit"]:hover {
+    .customerOpinion button[type="submit"]:hover {
     background-color: #b3a08a;
 }
