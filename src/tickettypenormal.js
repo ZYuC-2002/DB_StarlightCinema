@@ -24,7 +24,7 @@ const TicketTypeNormal = () => {
             <div className="title">
                 <h1>一般票種</h1>
             </div>
-            <table>
+            <table className="ticketnormal">
                 <thead>
                     <tr>
                         <th>票種</th>

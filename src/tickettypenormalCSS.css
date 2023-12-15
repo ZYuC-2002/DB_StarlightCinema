@@ -13,8 +13,7 @@ h1 {
     font-size: 8px;
     color: #595959;
 }
-
-table {
+.ticketnormal table {
     /* border-collapse: table合起來(collapse) or 分開(separate) */
     border-collapse: collapse;
     width: 80%;
@@ -22,13 +21,13 @@ table {
     text-align: center;
 }
   
-th, td {
+.ticketnormal th, .ticketnormal td {
     border: 1px solid #C7B198;
     padding: 8px;
     text-align: left;
 }
   
-th {
+.ticketnormal th {
     background-color: #C7B198;
 }
 
