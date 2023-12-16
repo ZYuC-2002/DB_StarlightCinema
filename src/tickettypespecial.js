@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./tickettypespecialCSS.css";
+import Navbar from "./upperlistuser";
+import Cookies from "universal-cookie";
 
 const TicketTypeSpecial = () => {
     // 上一頁
@@ -133,8 +135,11 @@ const TicketTypeSpecial = () => {
         ));
     };
 
+    const [search, setSearch] = useState('');
+
     return(
         <>
+            <Navbar setSearch={setSearch}/>
             <div className="movieinfo">
                 <div className="textBlock">
                     <div className="divItemDescription_CN">

@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import "./tickettypenormalCSS.css";
+import Navbar from "./upperlistuser";
+import Cookies from "universal-cookie";
 
 const TicketTypeNormal = () => {
     const calculateTotal = () => {
@@ -19,8 +21,11 @@ const TicketTypeNormal = () => {
         document.getElementById('grandTotal').innerText = grandTotal;
     };
 
+    const [search, setSearch] = useState('');
+
     return(
         <>
+            <Navbar setSearch={setSearch}/>
             <div className="title">
                 <h1>一般票種</h1>
             </div>

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import "./moviedetailCSS.css";
 import { Link } from "react-router-dom";
+import Navbar from "./upperlistuser";
+import Cookies from "universal-cookie";
 
 const MovieDetail = () => {
     var movieDetails = {
@@ -124,8 +126,11 @@ const MovieDetail = () => {
         setSelectedVersion(version);
     };
 
+    const [search, setSearch] = useState('');
+
     return(
         <>
+            <Navbar setSearch={setSearch}/>
             <div className='selectMovie'>
                 {/* 未: 如果在前一頁是點"蒼鷺與少年"，它就selected */}
                 <select value={selectedMovieId} onChange={handleChange}>

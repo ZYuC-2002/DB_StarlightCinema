@@ -1,9 +1,9 @@
 /*框框*/
 .register {
   max-width: 300px;
-  margin: 10% auto;
+  margin: 20vh auto;
   text-align: center;
-  padding: 20px;
+  padding: 5vh 5vw;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@
 .register .inputConfirmPassword {
   width: 100%;
   height: 30px;  /*輸入框的高度*/
-  margin-bottom: 10px;  /*每區的間距*/
+  margin-bottom: 2vh;  /*每區的間距*/
   display: flex;
 }
 
@@ -34,6 +34,7 @@
 .register .confirmPasswordLabel {
   margin-right: 10px;  /* 調整標籤和輸入框之間的距離 */
   min-width: 100px; /* 最小寬度，可以根據實際需要調整 */
+  text-align: right; /* 文字右對齊 */
 }
 
 /* 輸入框 */

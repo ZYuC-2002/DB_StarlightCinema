@@ -4,8 +4,8 @@
     max-width: 100%;
     min-height: 1px;
     margin-right: auto;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 3vw;
+    margin-top: 15vh;
     float: left;
 }
   
@@ -13,8 +13,6 @@
     width: 100%;
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
     float: left;
 }
   
@@ -23,11 +21,10 @@
     width: 50%;
     position: relative;
     min-height: 1px;
-    padding-left: 15px;
+    padding-left: 3vw;
     float: left;
     display: flex;
     flex-direction: column;
-    align-items: left;
 }
  
 /* temp1: col-xs-4 */
@@ -37,8 +34,6 @@
     width: 33.3333%;
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
     float: left;
 }
   
@@ -50,7 +45,7 @@
     border: 1px solid transparent;
     font-size: 16px;
     line-height: 1.5;
-    padding: 10px 16px;
+    padding: 2vh 2vw;
     border-radius: 6px;
     color: #fff;
     background-color: #337ab7;
@@ -62,29 +57,30 @@
 .divItemDescription_EN,
 .divTicketsTypeDescription_EN {
     font-family: Calibri;
-    padding: 5px;
-    padding-left: 18px;
+    padding: 1vh;
+    padding-left: 2vw;
     font-size: 12pt;
-    margin-top: -10px;
+    margin-top: -1vh;
     color: #aaaaaa;
 }
 
 .divTicketsTypeDescription_CN {
     color: #555555;
-    padding: 3px;
-    padding-left: 15px;
+    padding: 1vh;
+    padding-left: 2vw;
     font-size: 14pt;
 }
 
 .divItemDescription_CN {
     color: #555555;
     padding: 3px;
-    padding-left: 15px;
+    padding-left: 2vw;
     font-size: 16pt;
 }
 
 .ticket-counts-container {
     display: flex;
+    margin-top: 2vh;
 }
 
 .price {
@@ -101,8 +97,8 @@
 .ticket-count {
     cursor: pointer;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin: 5px;
+    padding: 1.5vh 1vw;
+    margin: 1vw;
 }
   
 .ticket-count.selected {
