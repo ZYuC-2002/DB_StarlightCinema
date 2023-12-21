@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./tickettypespecialCSS.css";
 import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";
@@ -136,6 +136,11 @@ const TicketTypeSpecial = () => {
     };
 
     const [search, setSearch] = useState('');
+    const cookies=new Cookies();
+    useEffect(() => {
+        cookies.set('search',search,{path:'/'});
+        console.log(cookies)
+    },[search])
 
     return(
         <>

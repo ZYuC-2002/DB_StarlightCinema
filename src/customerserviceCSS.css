@@ -16,12 +16,12 @@
     justify-content: center; /*内容右對齊*/
 }
 
-.name,
-.selectSex,
-.inputPhone,
-.inputEmail,
-.cinema,
-.opinion {
+.customerOpinion .name,
+.customerOpinion .selectSex,
+.customerOpinion .inputPhone,
+.customerOpinion .inputEmail,
+.customerOpinion .cinema,
+.customerOpinion .opinion {
     width: 100%;
     height: 30px;  /*輸入框的高度*/
     margin-bottom: 3vh;  /*每區的間距*/

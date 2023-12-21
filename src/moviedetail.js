@@ -127,6 +127,11 @@ const MovieDetail = () => {
     };
 
     const [search, setSearch] = useState('');
+    const cookies=new Cookies();
+    useEffect(() => {
+        cookies.set('search',search,{path:'/'});
+        console.log(cookies)
+    },[search])
 
     return(
         <>

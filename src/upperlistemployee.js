@@ -36,7 +36,7 @@ const Navbaremployee = ({ setSearch }) => {
           <p>場次銷售狀況</p>
         </button>
       </Link>
-      <Link to={'/'}>
+      <Link to={'/Advicereply'}>
         <button className='button-sub'>
           <p>客服收信及回信</p>
         </button>

@@ -10,6 +10,10 @@ import TimeList from "./timelist.js";
 import TicketTypeNormal from "./tickettypenormal.js";
 import TicketTypeSpecial from "./tickettypespecial.js";
 import CustomerService from "./customerservice.js";
+import AdviceReply from "./advicereply.js";
+import UploadPoster from "./uploadposter.js";
+import DeletePoster from "./deleteposter.js";
+import AdviceDetail from "./advicedetail.js";
 
 const AppRouter = () => (
     <Router>
@@ -25,6 +29,10 @@ const AppRouter = () => (
         <Route path="/Tickettypenormal/" element={<TicketTypeNormal/>} />
         <Route path="/Tickettypespecial/" element={<TicketTypeSpecial/>} />
         <Route path="/Customerservice/" element={<CustomerService/>} />
+        <Route path="/Advicereply/" element={<AdviceReply/>} />
+        <Route path="/Advicedetail/" element={<AdviceDetail/>} />
+        <Route path="/Uploadposter/" element={<UploadPoster/>} />
+        <Route path="/Deleteposter/" element={<DeletePoster/>} />
       </Routes>  
       
     </Router>

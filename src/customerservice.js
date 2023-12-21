@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import "./customerserviceCSS.css";
 import Navbar from "./upperlistuser";
@@ -13,6 +13,11 @@ export const CustomerService = () => {
     const cinemas = ['cinema1', 'cinema2', 'cinema3'];
 
     const [search, setSearch] = useState('');
+    const cookies=new Cookies();
+    useEffect(() => {
+        cookies.set('search',search,{path:'/'});
+        console.log(cookies)
+    },[search])
 
     return(
         <>

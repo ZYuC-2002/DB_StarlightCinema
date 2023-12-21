@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import "./emailcheckCSS.css";
 import Navbar from "./upperlistuser";
@@ -12,6 +12,11 @@ export const EmailCheck = () => {
     };
 
     const [search, setSearch] = useState('');
+    const cookies=new Cookies();
+    useEffect(() => {
+        cookies.set('search',search,{path:'/'});
+        console.log(cookies)
+    },[search])
 
     return(
         <>

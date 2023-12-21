@@ -1,15 +1,15 @@
-.title {
+.tickettypenormal .title {
     width: 80%;
     margin: 15vh auto;
     text-align: center;
 }
 
-h1 {
+.tickettypenormal h1 {
     text-align: center;
     color: #000000;
 }
 
-.comment {
+.tickettypenormal .comment {
     font-size: 8px;
     color: #595959;
 }
@@ -36,7 +36,7 @@ h1 {
     background-color: #C7B198;
 }
 
-select {
+.tickettypenormal select {
     border: 3px solid #C7B198;
     border-radius: 5px;
 }
