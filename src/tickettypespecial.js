@@ -100,6 +100,7 @@ const TicketTypeSpecial = () => {
     };
 
     // 敬老票
+    const [elderPrice, setElderPrice] = useState(170);
     const [selectedElderCount, setSelectedElderCount] = useState(null);  
     const handleElderCountChange = (count) => {
         setSelectedElderCount(count);
@@ -118,6 +119,7 @@ const TicketTypeSpecial = () => {
     };
 
     // 愛心票
+    const [disPrice, setDisPrice] = useState(170);
     const [selectedDisCount, setSelectedDisCount] = useState(null);  
     const handleDisCountChange = (count) => {
         setSelectedDisCount(count);
@@ -134,6 +136,16 @@ const TicketTypeSpecial = () => {
           </div>
         ));
     };
+
+    useEffect(() => {
+        cookies.set('selectedFreeCount',selectedFreeCount,{path:'/'});
+        cookies.set('selected3DFreeCount',selected3DFreeCount,{path:'/'});
+        cookies.set('selectedIMAXFreeCount',selectedIMAXFreeCount,{path:'/'});
+        cookies.set('selectedIMAXFreeVSCCount',selectedIMAXFreeVSCCount,{path:'/'});
+        cookies.set('selectedTITANCount',selectedTITANCount,{path:'/'});
+        cookies.set('selectedElderCount',selectedElderCount,{path:'/'});
+        cookies.set('selectedDisCount',selectedDisCount,{path:'/'});
+    },[selectedFreeCount, selected3DFreeCount, selectedIMAXFreeCount, selectedIMAXFreeVSCCount, selectedTITANCount, selectedElderCount, selectedDisCount])
 
     const [search, setSearch] = useState('');
     const cookies=new Cookies();
@@ -308,7 +320,7 @@ const TicketTypeSpecial = () => {
                         </div>
                     </div>
                     <div className="ticket-counts-container">
-                        <p className="price">NT$170</p>
+                        <p className="price">NT${elderPrice}</p>
                         {renderElderCounts()}
                     </div>
                 </div>
@@ -329,7 +341,7 @@ const TicketTypeSpecial = () => {
                         </div>
                     </div>
                     <div className="ticket-counts-container">
-                        <p className="price">NT$170</p>
+                        <p className="price">NT${disPrice}</p>
                         {renderDisCounts()}
                     </div>
                 </div>

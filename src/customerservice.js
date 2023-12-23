@@ -19,13 +19,22 @@ export const CustomerService = () => {
         console.log(cookies)
     },[search])
 
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    useEffect(() => {
+        setName(cookies.get('name') || '');
+        setPhone(cookies.get('tel') || ''); // 這裡可能要加上預設值
+        setEmail(cookies.get('email') || '');
+    }, [cookies]);
+
     return(
         <>
             <Navbar setSearch={setSearch}/>
             <form className="customerOpinion" onSubmit={handleSubmit}>
                 <div className="name">
                     <div className="nameLabel">姓名:</div>
-                    <input type="text"/>
+                    <input type="text" value={name} readOnly />
                 </div>
                 
                 <div className="selectSex">
@@ -36,12 +45,12 @@ export const CustomerService = () => {
 
                 <div className="inputPhone">
                     <div className="phoneLabel">連絡電話:</div>
-                    <input type="tel"/>
+                    <input type="tel" value={phone} readOnly />
                 </div>
 
                 <div className="inputEmail">
                     <div className="emailLabel">Email:</div>
-                    <input type="email"/>
+                    <input type="email" value={email} readOnly />
                 </div>
                 
                 <div className="cinema">

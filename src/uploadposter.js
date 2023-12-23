@@ -14,6 +14,10 @@ export const UploadPoster = () => {
 
     const [image, setImage] = useState('');
     const [imageSrc, setImageSrc] = useState('');
+
+    useEffect(() => {
+        cookies.set('imageSrc',imageSrc,{path:'/'});
+    },[imageSrc])
     
     const updateImage = (e) => {
         e.preventDefault();

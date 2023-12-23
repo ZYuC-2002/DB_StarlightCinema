@@ -12,13 +12,13 @@ export const DeletePoster = () => {
         console.log(cookies)
     },[search])
 
-    var initialPosterList = [
+    var initPosterList = [
         "https://static-cdn.nextapple.tw/prod/2023-07/779E46A98046CD5BC438093721A21F2A/08c9879a7ed2f67ed5e56fa2681e3384_1280.webp",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRc8OK7LL-Gdb0T7456SBoEWaUI0h_ieUam8YVVb7o3iqhuePFE9mvb4G-OXcdUTdVDtk&usqp=CAU",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcb13J8IfODbm2IeWeXEQizmd5aQVDyFGHXr1Aq1bOkEQg-nbrBI2kLXkdWZzYilomfxw&usqp=CAU"
     ];
 
-    const [posterList, setPosterList] = useState(initialPosterList);
+    const [posterList, setPosterList] = useState(initPosterList);
     const [selectedImages, setSelectedImages] = useState([]);
 
     const handleImageClick = (index) => {

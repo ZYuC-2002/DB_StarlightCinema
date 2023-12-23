@@ -7,6 +7,10 @@ const TicketTypeNormal = () => {
     const calculateTotal = () => {
         const fullQuantity = document.getElementById('fullQuantity').value;
         const discountQuantity = document.getElementById('discountQuantity').value;
+
+        // 將 fullPriceTicketNum 更新為全票數量
+        setFull(parseInt(fullQuantity));
+        setHalf(parseInt(discountQuantity));
     
         const fullPrice = 100;
         const discountPrice = 80;
@@ -27,6 +31,14 @@ const TicketTypeNormal = () => {
         cookies.set('search',search,{path:'/'});
         console.log(cookies)
     },[search])
+
+    const [fullPriceTicketNum, setFull] = useState(0);
+    const [halfPriceTicketNum, setHalf] = useState(0);
+
+    useEffect(() => {
+        cookies.set('fullPriceTicketNum',fullPriceTicketNum,{path:'/'});
+        cookies.set('halfPriceTicketNum',halfPriceTicketNum,{path:'/'});
+    },[fullPriceTicketNum, halfPriceTicketNum])
 
     return(
         <>

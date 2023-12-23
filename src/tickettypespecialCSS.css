@@ -48,8 +48,7 @@
     padding: 2vh 2vw;
     border-radius: 6px;
     color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
+    background-color: #C7B198;
     pointer-events: auto; /* 應該是默認值，可點擊 */
     cursor: pointer; /* 應該是默認值，顯示為指針 */
 }
@@ -102,6 +101,6 @@
 }
   
 .ticket-count.selected {
-    background-color: blue;
+    background-color: #C7B198;
     color: white;
 }

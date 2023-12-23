@@ -6,7 +6,7 @@ import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";
 
 const Register = () => {
-    const [text, setName] = useState('');
+    const [name, setName] = useState('');
     const [date, setBirthdate] = useState('');
     const [tel, setPhone] = useState('');
     const [email, setEmail] = useState('');
@@ -72,8 +72,12 @@ const Register = () => {
 
     useEffect(() => {
         cookies.set('search',search,{path:'/'});
-        console.log(cookies)
-    },[search])
+        cookies.set('name',name,{path:'/'});
+        cookies.set('date',date,{path:'/'});
+        cookies.set('tel',tel,{path:'/'});
+        cookies.set('email',email,{path:'/'});
+        cookies.set('password',password,{path:'/'});
+    },[search, name, date, tel, email, password])
 
     return(
         <>
@@ -85,7 +89,7 @@ const Register = () => {
                         <input
                             type="text"
                             placeholder="Name"
-                            required value={text}
+                            required value={name}
                             onChange={handleNameChange}
                             ref={nameRef}
                         />
