@@ -11,7 +11,7 @@
     font-weight: bold;
 }
 
-.timeSeat p {
+.timeSeat .button-style {
     background-color: #cacaca;
     padding: 3px 8px;
     display: block;

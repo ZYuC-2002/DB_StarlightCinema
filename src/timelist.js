@@ -1,6 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./timelistCSS.css";
-import {  } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Navbar from "./upperlistuser";
+import Cookies from "universal-cookie";
 
 const TimeList = () => {
     var showTimes = {
@@ -27,7 +29,21 @@ const TimeList = () => {
         },
     }
 
-    return(
+    const [choosetime, setTime] = useState('');
+    const [search, setSearch] = useState('');
+    const cookies=new Cookies();
+
+    useEffect(() => {
+        cookies.set('search',search,{path:'/'});
+    },[search])
+
+    const handleTimeClick = (selectedTime) => {
+        setTime(selectedTime);
+        // 將選擇的時間存儲到Cookie中
+        cookies.set('choosetime', selectedTime, { path: '/' });
+    }
+
+    return (
         <>
             {Object.keys(showTimes).map((key) => (
                 <div className="timelist" key={key}>
@@ -38,7 +54,11 @@ const TimeList = () => {
                     <div className="timeSeat">
                         {showTimes[key].times.map((time, timeIndex) => (
                             <>
-                                <p key={timeIndex}>{time}</p>
+                                <div className="button-style" key={timeIndex}>
+                                    <Link to={'/PaymentChoose'} onClick={() => handleTimeClick(time)}>
+                                        {time}
+                                    </Link>
+                                </div>
                                 <img src={process.env.PUBLIC_URL + "seat.png"} alt="" width="27" height="25" />
                             </>
                         ))}
