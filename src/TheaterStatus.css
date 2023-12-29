@@ -1,0 +1,18 @@
+.cinema-card {
+    border: 2px solid #ccc; /* 邊框顏色 */
+    border-radius: 8px; /* 圓角 */
+    margin-bottom: 3%; /* 影院卡片之間的間距 */
+    padding: 5%; /* 間距 */
+  }
+  
+  .cinema-card h2 {
+    font-size: 24px; /* 調整字體大小 */
+    margin-bottom: 3%; /* 影院、資訊之間的間距 */
+  }
+  
+  /* 放映時間 */
+  .movie-time {
+    margin-bottom:2vh;
+  }
+  
+  

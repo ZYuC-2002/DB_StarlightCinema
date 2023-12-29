@@ -1,18 +1,18 @@
 body {
-  margin: 100px; /* 加上邊界 */
+  margin: 10%; /* 加上邊界 */
 }
 
 .movie-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 2%;
 }
 
 .movie-card {
   width: calc(20% - 20px); /* 20% width for each card with 20px gap */
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -50,10 +50,10 @@ body {
 }
 
 .movie-types span {
-  margin: 0 5px;
+  margin: 0 1%;
   color: #fff;
   background-color: #007bff;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 0.6% 2%;
+  border-radius: 1%;
   font-size: 12px;
 }

@@ -11,6 +11,10 @@ import EmailCheck from "./emailcheck.js";
 import ForgotPassword from "./fogotPassword.js";
 import PaymentChoose from "./paymentChoose.js";
 import PaymentPage from "./paymentPage.js";
+import RemoveMovie from "./removeMovie.js";
+import TheaterStatus from "./TheaterStatus.js";
+import UploadToRemove from "./uploadToRemove.js"
+import RemoveToUpload from "./removeToUpload.js"
 // import Vegetable from "./vegetable.js";
 
 const AppRouter = () => (
@@ -28,6 +32,11 @@ const AppRouter = () => (
         <Route path="/ForgotPassword" element={<ForgotPassword/>} />
         <Route path="/PaymentChoose" element={<PaymentChoose/>} />
         <Route path="/PaymentPage" element={<PaymentPage/>} />
+        <Route path="/RemoveMovie" element={<RemoveMovie/>} />
+        <Route path="/TheaterStatus" element={<TheaterStatus/>} />
+        <Route path="/UploadToRemove" element={<UploadToRemove/>} />
+        <Route path="/RemoveToUpload" element={<RemoveToUpload/>} />
+        
       </Routes>  
       
     </Router>

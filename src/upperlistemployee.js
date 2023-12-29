@@ -23,7 +23,12 @@ const Navbaremployee = ({ setSearch }) => {
       <div className='blankpart' />
       <Link to={'/'}>
         <button className='button-sub'>
-          <p>上下架電影</p>
+          <p>上架電影</p>
+        </button>
+      </Link>
+      <Link to={'/RemoveMovie'}>
+        <button className='button-sub'>
+          <p>下架電影</p>
         </button>
       </Link>
       <Link to={'/'}>
