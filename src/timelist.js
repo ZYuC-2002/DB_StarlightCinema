@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import "./timelistCSS.css";
-import { Link } from "react-router-dom";
-import Navbar from "./upperlistuser";
+import React, {useState, useEffect} from "react";
+import "./timelist.css";
 import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 
 const TimeList = () => {
     var showTimes = {
@@ -28,22 +27,15 @@ const TimeList = () => {
             times: ['13:20', '18:05']
         },
     }
-
-    const [choosetime, setTime] = useState('');
-    const [search, setSearch] = useState('');
     const cookies=new Cookies();
-
-    useEffect(() => {
-        cookies.set('search',search,{path:'/'});
-    },[search])
-
-    const handleTimeClick = (selectedTime) => {
-        setTime(selectedTime);
-        // 將選擇的時間存儲到Cookie中
-        cookies.set('choosetime', selectedTime, { path: '/' });
+    const navigate = useNavigate();
+    const choosetime = (key,timeIndex) =>{
+        cookies.set('choosetime',showTimes[key].times[timeIndex]);
+        console.log(cookies.get('choosetime'));
+        navigate('/Tickettypenormal');
     }
 
-    return (
+    return(
         <>
             {Object.keys(showTimes).map((key) => (
                 <div className="timelist" key={key}>
@@ -54,11 +46,7 @@ const TimeList = () => {
                     <div className="timeSeat">
                         {showTimes[key].times.map((time, timeIndex) => (
                             <>
-                                <div className="button-style" key={timeIndex}>
-                                    <Link to={'/PaymentChoose'} onClick={() => handleTimeClick(time)}>
-                                        {time}
-                                    </Link>
-                                </div>
+                                <button onClick={() => choosetime(key, timeIndex)} key={timeIndex}>{time}</button>
                                 <img src={process.env.PUBLIC_URL + "seat.png"} alt="" width="27" height="25" />
                             </>
                         ))}

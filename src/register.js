@@ -1,12 +1,12 @@
 import React, {useState, useRef,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
-import "./registerCSS.css";
+import "./register.css";
 import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";
 
 const Register = () => {
-    const [name, setName] = useState('');
+    const [text, setName] = useState('');
     const [date, setBirthdate] = useState('');
     const [tel, setPhone] = useState('');
     const [email, setEmail] = useState('');
@@ -57,7 +57,7 @@ const Register = () => {
         /* submit */
         if (isSubmitEnabled) {
             /* send email */
-            emailjs.send("service_aq2wl0k","template_g4hcvlv",{ email: emailRef.current.value, name: nameRef.current.value }, "dHTKHVHTtwI7cqz5g")
+            emailjs.send("service_aq2wl0k","template_g4hcvlv",{ email: emailRef.current.value , name: nameRef.current.value}, "dHTKHVHTtwI7cqz5g")
                 .then(function(result) {
                     console.log('SUCCESS!', result.status, result.text);
                     navigate('/emailcheck'); // 密码一致时跳转到指定页面
@@ -72,12 +72,8 @@ const Register = () => {
 
     useEffect(() => {
         cookies.set('search',search,{path:'/'});
-        cookies.set('name',name,{path:'/'});
-        cookies.set('date',date,{path:'/'});
-        cookies.set('tel',tel,{path:'/'});
-        cookies.set('email',email,{path:'/'});
-        cookies.set('password',password,{path:'/'});
-    },[search, name, date, tel, email, password])
+        console.log(cookies)
+    },[search])
 
     return(
         <>
@@ -89,7 +85,7 @@ const Register = () => {
                         <input
                             type="text"
                             placeholder="Name"
-                            required value={name}
+                            required value={text}
                             onChange={handleNameChange}
                             ref={nameRef}
                         />

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import "./advicereplyCSS.css";
+import "./advicereply.css";
 import Navbaremployee from "./upperlistemployee";
 import Cookies from "universal-cookie";
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import "./deleteposterCSS.css";
+import "./deleteposter.css";
 import Navbaremployee from "./upperlistemployee";
 import Cookies from "universal-cookie";
 

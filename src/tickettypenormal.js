@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
-import "./tickettypenormalCSS.css";
+import "./tickettypenormal.css";
+import "./main.css"
 import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";
+import { Link } from "react-router-dom";
 
 const TicketTypeNormal = () => {
     const calculateTotal = () => {
@@ -95,6 +97,12 @@ const TicketTypeNormal = () => {
                     </tbody>
                 </table>
             </div>
+            <Link to={'/Timelist'}>
+                <button className='button-back'>BACK</button>
+            </Link>
+            <Link to={'/Seatselect'}>
+                <button className='button-next'>Next</button>
+            </Link>
         </>
     );
 };

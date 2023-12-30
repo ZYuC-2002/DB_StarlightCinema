@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import "./customerserviceCSS.css";
-import Navbar from "./upperlistuser";
+import "./customerservice.css";
+import './main.css'
+import Navbaremployee from "./upperlistemployee";
 import Cookies from "universal-cookie";
 
 export const CustomerService = () => {
@@ -30,7 +31,8 @@ export const CustomerService = () => {
 
     return(
         <>
-            <Navbar setSearch={setSearch}/>
+            <Navbaremployee setSearch={setSearch}/>
+            <div className="blank"/>
             <form className="customerOpinion" onSubmit={handleSubmit}>
                 <div className="name">
                     <div className="nameLabel">姓名:</div>

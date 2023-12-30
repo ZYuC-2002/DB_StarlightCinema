@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import './mainCSS.css'
+import './main.css'
 import Navbaremployee from './upperlistemployee';
 
 

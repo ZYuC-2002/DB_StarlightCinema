@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import "./advicedetailCSS.css";
+import "./advicedetail.css";
 import Navbaremployee from "./upperlistemployee";
 import Cookies from "universal-cookie";
 

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { Link } from 'react-router-dom';
+
 
 export default class SimpleSlider extends Component {
   render() {
@@ -19,7 +21,9 @@ export default class SimpleSlider extends Component {
       <div>
         <Slider {...settings}>
           <div>
-            <img src={process.env.PUBLIC_URL + "/scale.jpg"} alt="" height={'500'}/>
+            <Link to={'/Modify'}>
+              <img src={process.env.PUBLIC_URL + "/scale.jpg"} alt="" height={'500'}/>
+            </Link>
           </div>
           <div>
             <img src={process.env.PUBLIC_URL + "/kimitachiwadouikiruka.jpg"} alt="" height={'500'}/>

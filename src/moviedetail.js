@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import "./moviedetailCSS.css";
+import "./moviedetail.css";
 import { Link } from "react-router-dom";
 import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./tickettypespecialCSS.css";
+import "./tickettypespecial.css";
 import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";
 

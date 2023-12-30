@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import "./uploadposterCSS.css";
+import "./uploadposter.css";
 import Navbaremployee from "./upperlistemployee";
 import Cookies from "universal-cookie";
 
@@ -55,6 +55,7 @@ export const UploadPoster = () => {
     return(
         <>
             <Navbaremployee setSearch={setSearch}/>
+            <div className="blank"/>
             <form className="inputImgURL" onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <div className="title">宣傳海報上傳</div>
