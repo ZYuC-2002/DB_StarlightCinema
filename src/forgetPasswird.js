@@ -1,31 +1,18 @@
 import React, {useState, useRef,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
-import "./register.css";
+import "./forgetPassword.css";
 import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";
+import { BrowserRouter as Router } from 'react-router-dom';
 
-const Register = () => {
-    const [text, setName] = useState('');
-    const [date, setBirthdate] = useState('');
-    const [tel, setPhone] = useState('');
+const ForgetPassword = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
     const navigate = useNavigate();
 
-    const handleNameChange = (event) => {
-        setName(event.target.value);
-    };
-
-    const handleBirthdateChange = (event) => {
-        setBirthdate(event.target.value);
-    };
-
-    const handlePhoneChange = (event) => {
-        setPhone(event.target.value);
-    };
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -48,19 +35,20 @@ const Register = () => {
     };
 
     const emailRef = useRef(null);
-    const nameRef = useRef(null);
+    //const nameRef = useRef(null);
+    //, name: nameRef.current.value 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alertMessage(); // 在提交前检查密码是否一致
+        alertMessage(); // 檢查密碼是否一致
 
         /* submit */
         if (isSubmitEnabled) {
             /* send email */
-            emailjs.send("service_aq2wl0k","template_g4hcvlv",{ email: emailRef.current.value , name: nameRef.current.value}, "dHTKHVHTtwI7cqz5g")
+            emailjs.send("service_aq2wl0k","template_g4hcvlv",{ email: emailRef.current.value}, "dHTKHVHTtwI7cqz5g")
                 .then(function(result) {
                     console.log('SUCCESS!', result.status, result.text);
-                    navigate('/emailcheck'); // 密码一致时跳转到指定页面
+                    navigate('/emailcheck'); // 密碼一致時跳轉頁面
                 })
                 .catch(function(error) {
                     console.error('FAILED...', error);
@@ -73,42 +61,15 @@ const Register = () => {
     useEffect(() => {
         cookies.set('search',search,{path:'/'});
         console.log(cookies)
-    },[search])
+    },[search, cookies])
 
     return(
         <>
             <Navbar setSearch={setSearch}/>
             <div className="register">
                 <form onSubmit={handleSubmit}>
-                    <div className="inputName">
-                        <div className="nameLabel">姓名:</div>
-                        <input
-                            type="text"
-                            placeholder="Name"
-                            required value={text}
-                            onChange={handleNameChange}
-                            ref={nameRef}
-                        />
-                    </div>
-                    <div className="inputBirthdate">
-                        <div className="birthdateLabel">生日:</div>
-                        <input
-                            type="date"
-                            required value={date}
-                            onChange={handleBirthdateChange}
-                        />
-                    </div>
-                    <div className="inputPhone">
-                        <div className="phoneLabel">手機號碼:</div>
-                        <input
-                            type="tel"
-                            placeholder="Phone"
-                            required value={tel}
-                            onChange={handlePhoneChange}
-                        />
-                    </div>
                     <div className="inputEmail">
-                        <div className="emailLabel">電子信箱:</div>
+                        <div className="emailLabel">請輸入電子信箱:</div>
                         <input
                             type="email"
                             placeholder="Email"
@@ -119,7 +80,7 @@ const Register = () => {
                         />
                     </div>
                     <div className="inputPassword">
-                        <div className="passwordLabel">密碼:</div>
+                        <div className="passwordLabel">請輸入新密碼:</div>
                         <input
                             type="password"
                             placeholder="Password"
@@ -129,7 +90,7 @@ const Register = () => {
                         />
                     </div>
                     <div className="inputConfirmPassword">
-                        <div className="confirmPasswordLabel">確認密碼:</div>
+                        <div className="confirmPasswordLabel">請再次輸入新密碼:</div>
                         <input
                             type="password"
                             placeholder="Confirm Password"
@@ -139,13 +100,13 @@ const Register = () => {
                         />
                     </div>
 
-                    <button type="submit">註冊</button>
+                    <button type="submit">發送驗證信</button>
                 </form>
                 
             </div>
         </>
+      
     );
     
 };
-
-export default Register;
+export default ForgetPassword;

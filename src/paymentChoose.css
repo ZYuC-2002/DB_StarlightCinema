@@ -1,0 +1,78 @@
+h3{
+  font-size: 20px;
+}
+.paymentButton h3{
+  padding: 20px 20px; /* 調整內容與按鈕邊緣的距離 */
+  font-size: 20px; /* 調整按鈕文字大小 */
+  line-height: 1px; /* 將行高設定為1，減少行與行之間的距離 */
+}
+
+h2{
+  color: blue; /* 修改大標題文字顏色 */
+  font-weight: bold; /* 加粗文字 */
+  font-size: 30px;
+  text-align: center; /* 將文字水平置中 */
+}
+
+h3{
+  color: rgb(0, 0, 0); /* 修改大標題文字顏色 */
+}
+
+.turn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pageto{
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 150px; /* 調整容器的最大寬度 */
+}
+
+.check{
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  /* display: flex;
+  align-items: center; */
+  display: flex;
+  align-items: center;
+}
+
+.buttonContainer {
+  margin-bottom: 10px; /* 設定按鈕間距，讓它們在不同行上 */
+  width: 100%; /* 讓buttonContainer撐滿寬度 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* margin-bottom: 20px; */
+  /* margin-top: 30px; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.paymentCard {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.paymentButton {
+  font-size: 35px; /* 調整按鈕文字大小 */
+  font-weight: bold; /* 加粗文字 */
+  padding: 5% 5%; /* 調整內容與按鈕邊緣的距離 */
+  /* margin-top: 20px; */
+  width: 100%;
+  padding: 2%;
+  /* margin-bottom: 10px; */
+  text-align: center;
+}

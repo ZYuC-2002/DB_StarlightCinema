@@ -1,0 +1,55 @@
+.deleteposter {
+    margin-top: 15vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    display: flex;
+    flex-wrap: wrap;  /* 換行 */
+    justify-content: space-between;
+}
+
+.poster-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 30vw;
+}
+
+.posters {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+input[type="checkbox"] {
+    width: 20px; /* 设置勾选框的宽度 */
+    height: 20px; /* 设置勾选框的高度 */
+}
+
+/* 送出按鈕的父容器 */
+.removePosterContainer {
+    display: flex;
+    justify-content: flex-end; /* 将按钮靠右对齐 */
+}
+
+/*送出按鈕*/
+.removePoster {
+    margin-left: auto;
+    margin-right: 3vw;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    background-color: #C7B198;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+/*送出按鈕(鼠標放上去)*/
+.removePoster:hover {
+    background-color: #b3a08a;
+}

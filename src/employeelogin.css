@@ -24,14 +24,13 @@
     font-size: 15px; /* 設定卡片內的輸入框的字體大小 */
   }
   
-  .button-login-container {
+  .button-employee-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 26vw;
   }
   
-  .login-button,
-  .register-button {
+  .employee-login-button {
     background-color: #C7B198;
     color: white;
     border: none;
