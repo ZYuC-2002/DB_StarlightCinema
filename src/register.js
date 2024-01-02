@@ -83,7 +83,7 @@ const Register = () => {
                     <div className="inputName">
                         <div className="nameLabel">姓名:</div>
                         <input
-                            type="text"
+                            type="register-text"
                             placeholder="Name"
                             required value={text}
                             onChange={handleNameChange}
@@ -101,7 +101,7 @@ const Register = () => {
                     <div className="inputPhone">
                         <div className="phoneLabel">手機號碼:</div>
                         <input
-                            type="tel"
+                            type="register-tel"
                             placeholder="Phone"
                             required value={tel}
                             onChange={handlePhoneChange}
@@ -110,7 +110,7 @@ const Register = () => {
                     <div className="inputEmail">
                         <div className="emailLabel">電子信箱:</div>
                         <input
-                            type="email"
+                            type="register-email"
                             placeholder="Email"
                             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
                             required value={email}
@@ -121,7 +121,7 @@ const Register = () => {
                     <div className="inputPassword">
                         <div className="passwordLabel">密碼:</div>
                         <input
-                            type="password"
+                            type="register-password"
                             placeholder="Password"
                             pattern="^[a-zA-Z0-9._%+-]{6,20}$"
                             required value={password}
@@ -131,7 +131,7 @@ const Register = () => {
                     <div className="inputConfirmPassword">
                         <div className="confirmPasswordLabel">確認密碼:</div>
                         <input
-                            type="password"
+                            type="register-password"
                             placeholder="Confirm Password"
                             pattern="^[a-zA-Z0-9._%+-]{6,20}$"
                             required value={confirmPassword}

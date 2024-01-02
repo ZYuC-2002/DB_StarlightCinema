@@ -15,7 +15,7 @@ import Uploadthird from "./uploadthird.js";
 import MovieList from "./movieList.js";
 import MovieInfo from "./movieinfo.js";
 import EmployeeLogin from "./employeeLogin.js";
-import ForgetPassword from "./forgetPasswird.js";
+import ForgetPassword from "./forgetPassword.js";
 import PaymentChoose from "./paymentChoose.js";
 import PaymentPage from "./paymentPage.js";
 import UploadPoster from "./uploadposter.js";

@@ -26,12 +26,12 @@
     display: flex;
 }
 
-.nameLabel,
-.sexLabel,
-.phoneLabel,
-.emailLabel,
-.cinemaLabel,
-.opinionLabel {
+.customerOpinion .nameLabel,
+.customerOpinion .sexLabel,
+.customerOpinion .phoneLabel,
+.customerOpinion .emailLabel,
+.customerOpinion .cinemaLabel,
+.customerOpinion .opinionLabel {
     min-width: 100px; /* 最小寬度，可以根據實際需要調整 */
     text-align: left;
 }

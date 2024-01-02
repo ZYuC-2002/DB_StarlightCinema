@@ -69,7 +69,7 @@ function Login() {
             </div>
             </form>
             <p className="forgot-password">
-            <a href="/forgot-password">忘記密碼</a>
+            <a href="/ForgetPassword">忘記密碼</a>
             </p>
         </div>
         </div>
