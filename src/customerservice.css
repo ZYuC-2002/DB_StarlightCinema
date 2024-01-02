@@ -1,8 +1,6 @@
 .customerOpinion {
     width: 50vw;
     height: 60vh;
-    /* min-width: ;
-    min-height: ; */
     margin-top: 15vh;
     margin-left: auto;
     margin-right: auto;
@@ -42,7 +40,7 @@
 .cinema select {
     border: 1px solid #ccc;
     border-radius: 5px;
-    height: 25px;
+    height: 30px;
     width: calc(100% - 100px); /* 寬度計算，總寬度減去標籤的寬度 */
 }
 
@@ -50,7 +48,7 @@ input[type="radio"] {
     margin-left: 1%;
     margin-right: 0;
     width: 10%;  /* 调整单选框的宽度 */
-    height: 4vh;  /* 调整单选框的高度 */
+    height: 3vh;  /* 调整单选框的高度 */
 }
 
 /*送出按鈕*/
@@ -65,6 +63,6 @@ input[type="radio"] {
 }
   
 /*送出按鈕(鼠標放上去)*/
-    .customerOpinion button[type="submit"]:hover {
+.customerOpinion button[type="submit"]:hover {
     background-color: #b3a08a;
 }

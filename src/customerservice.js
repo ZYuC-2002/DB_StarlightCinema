@@ -25,7 +25,7 @@ export const CustomerService = () => {
     const [email, setEmail] = useState('');
     useEffect(() => {
         setName(cookies.get('name') || '');
-        setPhone(cookies.get('tel') || ''); // 這裡可能要加上預設值
+        setPhone(cookies.get('tel') || ''); 
         setEmail(cookies.get('email') || '');
     }, [cookies]);
 
@@ -36,39 +36,39 @@ export const CustomerService = () => {
             <form className="customerOpinion" onSubmit={handleSubmit}>
                 <div className="name">
                     <div className="nameLabel">姓名:</div>
-                    <input type="text" value={name} readOnly />
+                    <input type="text" required />
                 </div>
                 
                 <div className="selectSex">
                     <div className="sexLabel">性別:</div>
-                    <input type="radio" name="sex" value="male"/>男
-                    <input type="radio" name="sex" value="female"/>女
+                    <input type="radio" name="sex" value="male" />男
+                    <input type="radio" name="sex" value="female" />女
                 </div>
 
                 <div className="inputPhone">
                     <div className="phoneLabel">連絡電話:</div>
-                    <input type="tel" value={phone} readOnly />
+                    <input type="tel" required />
                 </div>
 
                 <div className="inputEmail">
                     <div className="emailLabel">Email:</div>
-                    <input type="email" value={email} readOnly />
+                    <input type="email" required />
                 </div>
                 
                 <div className="cinema">
                     <div className="cinemaLabel">建議之影城:</div>
-                    <select className="selectCinema">
-                    {cinemas.map((cinema, index) => (
-                        <option key={index} value={cinema}>
-                            {cinema}
-                        </option>
-                    ))}
+                    <select className="selectCinema" required>
+                        {cinemas.map((cinema, index) => (
+                            <option key={index} value={cinema}>
+                                {cinema}
+                            </option>
+                        ))}
                     </select>
                 </div>
 
                 <div className="opinion">
                     <div className="opinionLabel">建議內容:</div>
-                    <input type="text"/>
+                    <input type="text" required />
                 </div>
 
                 <button type="submit">送出您的意見</button>

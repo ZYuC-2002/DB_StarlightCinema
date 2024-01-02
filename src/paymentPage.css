@@ -15,14 +15,14 @@
     margin-top: 10px;
   }
   
-  select {
+  .payment-card select {
     padding: 8px;
     font-size: 16px;
     margin-bottom: 10px;
   }
   
-  input[type='text'],
-  select {
+  .payment-card input[type='text'],
+  .payment-card select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
