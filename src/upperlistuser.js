@@ -31,7 +31,7 @@ const Navbar = ({ setSearch }) => {
           <p>電影簡介</p>
         </button>
       </Link>
-      <Link to={'/'}>
+      <Link to={'/Customerservice'}>
         <button className='button-sub'>
           <p>客服頁面</p>
         </button>
