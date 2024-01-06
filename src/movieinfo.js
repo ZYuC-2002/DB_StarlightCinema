@@ -13,11 +13,9 @@ const MovieInfo = () => {
         cookies.set('search',search,{path:'/'});
         console.log(cookies)
     },[search])
-
     useEffect(()=>{
         cookies.set('choose_movie',movieDetails.movieChiName,{path:'/'});
     },[])
-
     var movieDetails = {
         img: '/theboyandtheheron.jpg',
         level: "普遍級",
@@ -48,7 +46,6 @@ const MovieInfo = () => {
             'IMAX': ['星光影城', '陽光影城', '月光影城'],
         }
     };
-
     const [selectedVersion, setSelectedVersion] = useState(null);
     const navigate=useNavigate();
     const handleVersionClick = (event, version) => {
@@ -56,13 +53,11 @@ const MovieInfo = () => {
         setSelectedVersion(version);
         cookies.set('selectedVersion', version, { path: '/' });   
     };
-
     const choosetheater=(event,theater)=>{
         event.preventDefault();
         cookies.set('selectedTheater', theater, { path: '/' });
         navigate('/Timelist');
     }
-    
     return(
         <>  
             <Navbar setSearch={setSearch}/>
