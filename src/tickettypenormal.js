@@ -19,7 +19,8 @@ const TicketTypeNormal = () => {
     
         const fullTotal = fullQuantity * fullPrice;
         const discountTotal = discountQuantity * discountPrice;
-    
+        cookies.set('fullPriceTicketPrice',fullTotal,{path:'/'});
+        cookies.set('halfPriceTicketPrice',discountTotal,{path:'/'});
         document.getElementById('fullTotal').innerText = fullTotal;
         document.getElementById('discountTotal').innerText = discountTotal;
     

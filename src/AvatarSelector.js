@@ -1,9 +1,16 @@
 // AvatarSelector.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './main.css'; // 引入CSS文件
+import Cookies from "universal-cookie";
 
 const AvatarSelector = () => {
   const [selectedAvatar, setSelectedAvatar] = useState(null);
+
+  const cookies = new Cookies();
+  useEffect(() => {
+    cookies.set('selectedAvatar',selectedAvatar,{path:'/'});
+    console.log(cookies)
+  },[selectedAvatar, cookies])
 
   const handleAvatarClick = (avatar) => {
     // 使用完整的圖片 URL

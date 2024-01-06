@@ -1,5 +1,6 @@
 import './main.css'
 import React from 'react';
+import Cookies from 'universal-cookie';
 
 export default class SeatPicker extends React.Component {
   
@@ -54,6 +55,7 @@ export default class SeatPicker extends React.Component {
               },
               () => {
                 this.props.onReservedSeatsCountChange(this.state.seatReserved.length);
+                this.updateReservedSeatsCookies();
               }
             );
           } else {
@@ -64,10 +66,17 @@ export default class SeatPicker extends React.Component {
               },
               () => {
                 this.props.onReservedSeatsCountChange(this.state.seatReserved.length);
+                this.updateReservedSeatsCookies();
               }
             );
           }
         }
+      }
+      updateReservedSeatsCookies() {
+        const cookies = new Cookies();
+        const reservedSeats = this.state.seatReserved;
+        cookies.set('reservedSeats', reservedSeats, { path: '/' });
+        console.log(cookies.get('reservedSeats'));
       }
       
     render() {

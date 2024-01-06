@@ -6,32 +6,33 @@ import { useNavigate } from "react-router-dom";
 const TimeList = () => {
     var showTimes = {
         '01': {
-            year: "2023",
-            month: "11",
-            day: "20",
-            week: "一",
+            year: "2024",
+            month: "01",
+            day: "11",
+            week: "四",
             times: ['18:05']
         },
         '02': {
             year: "2023",
-            month: "11",
-            day: "21",
-            week: "二",
+            month: "01",
+            day: "12",
+            week: "五",
             times: ['13:20', '18:05']
         },
         '03': {
             year: "2023",
-            month: "11",
-            day: "22",
-            week: "三",
+            month: "01",
+            day: "13",
+            week: "六",
             times: ['13:20', '18:05']
         },
     }
     const cookies=new Cookies();
     const navigate = useNavigate();
+    console.log(cookies.get('selectedVersion'),cookies.get('selectedTheater'));
     const choosetime = (key,timeIndex) =>{
         cookies.set('choosetime',showTimes[key].times[timeIndex]);
-        console.log(cookies.get('choosetime'));
+        cookies.set('choosedate',[showTimes[key].year,'/',showTimes[key].month,'/',showTimes[key].day]);
         navigate('/Tickettypenormal');
     }
 

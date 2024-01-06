@@ -34,14 +34,15 @@
 .register .confirmPasswordLabel {
   margin-right: 10px;  /* 調整標籤和輸入框之間的距離 */
   min-width: 100px; /* 最小寬度，可以根據實際需要調整 */
+  text-align: right;
 }
 
 /* 輸入框 */
-.register input[type="text"],
+.register input[type="register-name"],
 .register input[type="date"],
-.register input[type="tel"],
-.register input[type="email"],
-.register input[type="password"] {
+.register input[type="register-tel"],
+.register input[type="register-email"],
+.register input[type="register-password"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   height: 25px;

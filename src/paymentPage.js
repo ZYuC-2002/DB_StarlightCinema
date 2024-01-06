@@ -10,7 +10,7 @@ const PaymentPage = () => {
     const [isChecked, setIsChecked] = useState(false);
     const [isConfirmed, setIsConfirmed] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
-
+    
     const handleCheck = () => {
         setIsChecked(!isChecked);
     };
@@ -31,6 +31,20 @@ const PaymentPage = () => {
 
     const [search, setSearch] = useState('');
     const cookies = new Cookies();
+    const theater=cookies.get('selectedTheater');
+    const movie=cookies.get('choose_movie');
+    const date=cookies.get('choosedate');
+    const ticketnum=cookies.get('fullPriceTicketNum')+cookies.get('halfPriceTicketNum');
+    var tickettype='';
+    if (cookies.get('fullPriceTicketNum')>0){
+        tickettype='一般票';
+    }
+    else{
+        tickettype='優惠票';
+    }
+    const reserved=cookies.get('reservedSeats');
+    const totalprice=cookies.get('fullPriceTicketPrice')+cookies.get('halfPriceTicketPrice')+10;
+
 
     useEffect(() => {
         cookies.set('search', search, { path: '/' });
@@ -44,13 +58,14 @@ const PaymentPage = () => {
         <div className="payment-card">
             <div className='information'>
                 {/* 到時候再放訂購的東西 */}
-                <h2>影城: <br></br>
-                    電影: <br></br>
-                    場次:(日期 時間)<br></br>
-                    票數: <br></br>
-                    票種: <br></br>
-                    手續費: <br></br>
-                    總計:<br></br>
+                <h2>影城: {theater}<br></br>
+                    電影: {movie}<br></br>
+                    場次: {date}<br></br>
+                    票數: {ticketnum}<br></br>
+                    票種: {tickettype}<br></br>
+                    座位: {reserved}<br></br>
+                    手續費: $10<br></br>
+                    總計: {totalprice}<br></br>
                     </h2>
             </div>
             <select>

@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import "./movieinfo.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Navbar from "./upperlistuser";
 import Cookies from "universal-cookie";
+
 
 const MovieInfo = () => {
     const [search, setSearch] = useState('');
@@ -11,7 +12,11 @@ const MovieInfo = () => {
     useEffect(() => {
         cookies.set('search',search,{path:'/'});
         console.log(cookies)
-    },[search, cookies])
+    },[search])
+
+    useEffect(()=>{
+        cookies.set('choose_movie',movieDetails.movieChiName,{path:'/'});
+    },[])
 
     var movieDetails = {
         img: '/theboyandtheheron.jpg',
@@ -43,13 +48,21 @@ const MovieInfo = () => {
             'IMAX': ['星光影城', '陽光影城', '月光影城'],
         }
     };
-    const [selectedVersion, setSelectedVersion] = useState(null);
 
+    const [selectedVersion, setSelectedVersion] = useState(null);
+    const navigate=useNavigate();
     const handleVersionClick = (event, version) => {
         event.preventDefault();
         setSelectedVersion(version);
-        cookies.set('selectedVersion', version, { path: '/' });
+        cookies.set('selectedVersion', version, { path: '/' });   
     };
+
+    const choosetheater=(event,theater)=>{
+        event.preventDefault();
+        cookies.set('selectedTheater', theater, { path: '/' });
+        navigate('/Timelist');
+    }
+    
     return(
         <>  
             <Navbar setSearch={setSearch}/>
@@ -100,9 +113,9 @@ const MovieInfo = () => {
                                 {selectedVersion === version && (
                                     <ul className="theaterList">
                                         {screeningVersions.theaters[version].map((theater, theaterIndex) => (
-                                            <Link to={'/TimeList'}>
-                                                <li key={theaterIndex} id="theater">{theater}</li>
-                                            </Link>
+                                        <Link>
+                                            <li key={theaterIndex} id="theater" onClick={(e) => choosetheater(e,theater)}>{theater}</li>
+                                        </Link>
                                         ))}
                                     </ul>
                                 )}
