@@ -14,8 +14,8 @@ const TicketTypeNormal = () => {
         setFull(parseInt(fullQuantity));
         setHalf(parseInt(discountQuantity));
     
-        const fullPrice = 100;
-        const discountPrice = 80;
+        const fullPrice = 340;
+        const discountPrice = 320;
     
         const fullTotal = fullQuantity * fullPrice;
         const discountTotal = discountQuantity * discountPrice;
@@ -62,7 +62,7 @@ const TicketTypeNormal = () => {
                     <tbody>
                         <tr>
                             <td>全票</td>
-                            <td id="fullPrice">100</td>
+                            <td id="fullPrice">340</td>
                             <td>
                                 <select id="fullQuantity" onChange={calculateTotal}>
                                     {[...Array(11).keys()].map((num) => (
@@ -79,7 +79,7 @@ const TicketTypeNormal = () => {
                                 <p>優待票</p>
                                 <p className="comment">優待票包括學生票、軍警票、孩童票；購買優待票者，需於進場驗票時出示相關優待證件，無證件者須補費至全票金額。</p>
                             </td>
-                            <td id="discountPrice">80</td>
+                            <td id="discountPrice">320</td>
                             <td>
                                 <select id="discountQuantity" onChange={calculateTotal}>
                                     {[...Array(11).keys()].map((num) => (

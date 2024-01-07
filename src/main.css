@@ -386,3 +386,26 @@ h1{
   height: 6vh;
   opacity: 0.1;
 }
+.employeemainButton{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 25vh;
+}
+.employeemainButton input{
+  margin: 3vh;
+  background-color: #C7B198;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.employeelogout{
+  display: block;
+  position: absolute;
+  bottom: 50%;
+  right: auto;
+}
