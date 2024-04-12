@@ -1,0 +1,106 @@
+.movieinfo {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 1px;
+    margin-right: auto;
+    margin-left: 3vw;
+    margin-top: 15vh;
+    float: left;
+}
+  
+.textBlock {
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+  
+/* temp: col-sm-6 */
+.temp {
+    width: 50%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 3vw;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+ 
+/* temp1: col-xs-4 */
+/* temp2: col-xs-8 */
+.temp1,
+.temp2 {
+    width: 33.3333%;
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+  
+.btn,
+.btn-outline-primary {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 2vh 2vw;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #C7B198;
+    pointer-events: auto; /* 應該是默認值，可點擊 */
+    cursor: pointer; /* 應該是默認值，顯示為指針 */
+}
+  
+.divItemDescription_EN,
+.divTicketsTypeDescription_EN {
+    font-family: Calibri;
+    padding: 1vh;
+    padding-left: 2vw;
+    font-size: 12pt;
+    margin-top: -1vh;
+    color: #aaaaaa;
+}
+
+.divTicketsTypeDescription_CN {
+    color: #555555;
+    padding: 1vh;
+    padding-left: 2vw;
+    font-size: 14pt;
+}
+
+.divItemDescription_CN {
+    color: #555555;
+    padding: 3px;
+    padding-left: 2vw;
+    font-size: 16pt;
+}
+
+.ticket-counts-container {
+    display: flex;
+    margin-top: 2vh;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+}
+
+.ticket-type {
+    display: block;
+    flex-direction: row;
+    align-items: center; /* 設置票種的內容靠左對齊 */
+}
+
+.ticket-count {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 1.5vh 1vw;
+    margin: 1vw;
+}
+  
+.ticket-count.selected {
+    background-color: #C7B198;
+    color: white;
+}

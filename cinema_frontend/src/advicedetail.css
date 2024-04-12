@@ -1,0 +1,63 @@
+.customerinfo,
+.advicecontent,
+.advicereply {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5vh;
+}
+
+.advicedetail .title {
+    width: 100%;
+    height: auto;
+    margin-left: 5vw;
+    margin-bottom: 2vh;
+    text-align: left;
+}
+
+.customerinfo .title {
+    margin-top: 15vh;
+}
+
+.customerinfo .label {
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: left;
+    margin-left: 5vw;
+    text-align: left;
+}
+
+.customerinfo .input {
+    display: inline-block;
+    vertical-align: left;
+    margin-left: 5vw;
+    text-align: left;
+}
+
+.advicecontent .content,
+.advicereply .reply {
+    margin-left: 5vw;
+    margin-bottom: 2vh;
+    text-align: left;
+    display: inline-block;
+    border: 1px solid #C7B198;
+    padding: 10px;
+    word-wrap: break-word;
+    width: 70%;
+}
+
+/*送出按鈕*/
+.advicereply button[type="submit"] {
+    margin-left: 5vw;
+    background-color: #C7B198;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+  /*送出按鈕(鼠標放上去)*/
+.advicereply button[type="submit"]:hover {
+    background-color: #b3a08a;
+}
